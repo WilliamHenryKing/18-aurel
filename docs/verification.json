@@ -1,0 +1,519 @@
+{
+  "slug": "18-aurel",
+  "base": "http://127.0.0.1:4628",
+  "date": "2026-10-03T14:46:35.549Z",
+  "checks": [
+    {
+      "name": "1440 #/ no overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 #/ images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440 #/ single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "1440 #/ axe A/AA",
+      "pass": true
+    },
+    {
+      "name": "1440 #/projects no overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 #/projects images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440 #/projects single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "1440 #/projects axe A/AA",
+      "pass": true
+    },
+    {
+      "name": "1440 #/studio no overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 #/studio images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440 #/studio single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "1440 #/enquiry no overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 #/enquiry images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440 #/enquiry single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "1440 #/enquiry axe A/AA",
+      "pass": true
+    },
+    {
+      "name": "1440 #/light no overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 #/light images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440 #/light single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "1440 #/projects/dune-house no overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 #/projects/dune-house images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440 #/projects/dune-house single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "1440 #/projects/quiet-gallery no overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 #/projects/quiet-gallery images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440 #/projects/quiet-gallery single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "1440 #/projects/walnut-room no overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 #/projects/walnut-room images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440 #/projects/walnut-room single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "1440 #/projects/inner-sanctuary no overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 #/projects/inner-sanctuary images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440 #/projects/inner-sanctuary single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "390 #/ no overflow",
+      "pass": true
+    },
+    {
+      "name": "390 #/ images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390 #/ single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "390 #/ axe A/AA",
+      "pass": true
+    },
+    {
+      "name": "390 #/projects no overflow",
+      "pass": true
+    },
+    {
+      "name": "390 #/projects images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390 #/projects single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "390 #/projects axe A/AA",
+      "pass": true
+    },
+    {
+      "name": "390 #/studio no overflow",
+      "pass": true
+    },
+    {
+      "name": "390 #/studio images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390 #/studio single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "390 #/enquiry no overflow",
+      "pass": true
+    },
+    {
+      "name": "390 #/enquiry images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390 #/enquiry single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "390 #/enquiry axe A/AA",
+      "pass": true
+    },
+    {
+      "name": "390 #/light no overflow",
+      "pass": true
+    },
+    {
+      "name": "390 #/light images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390 #/light single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "390 #/projects/dune-house no overflow",
+      "pass": true
+    },
+    {
+      "name": "390 #/projects/dune-house images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390 #/projects/dune-house single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "390 #/projects/quiet-gallery no overflow",
+      "pass": true
+    },
+    {
+      "name": "390 #/projects/quiet-gallery images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390 #/projects/quiet-gallery single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "390 #/projects/walnut-room no overflow",
+      "pass": true
+    },
+    {
+      "name": "390 #/projects/walnut-room images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390 #/projects/walnut-room single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "390 #/projects/inner-sanctuary no overflow",
+      "pass": true
+    },
+    {
+      "name": "390 #/projects/inner-sanctuary images loaded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390 #/projects/inner-sanctuary single nonempty heading",
+      "pass": true
+    },
+    {
+      "name": "Brief downloads text file",
+      "pass": true
+    },
+    {
+      "name": "Brief includes selected choices",
+      "pass": true
+    },
+    {
+      "name": "Brief confirms local demo",
+      "pass": true
+    },
+    {
+      "name": "Phone menu opens",
+      "pass": true
+    },
+    {
+      "name": "mobile menu axe A/AA",
+      "pass": true
+    },
+    {
+      "name": "Escape closes phone menu",
+      "pass": true
+    },
+    {
+      "name": "Phone menu navigation changes route",
+      "pass": true
+    },
+    {
+      "name": "Phone menu closes after navigation",
+      "pass": true
+    },
+    {
+      "name": "Reduced-motion home remains readable",
+      "pass": true
+    },
+    {
+      "name": "Unknown hash route is handled",
+      "pass": true
+    },
+    {
+      "name": "No browser/network errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "routes": [
+    {
+      "width": 1440,
+      "route": "#/",
+      "title": "Space, deeply felt. — AUREL",
+      "headings": ["Space, deeply felt."],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "#/projects",
+      "title": "Selected studies — AUREL",
+      "headings": ["Considered spaces.Lasting impressions."],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "#/studio",
+      "title": "The studio — AUREL",
+      "headings": ["Less noise.More meaning."],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "#/enquiry",
+      "title": "A first thought — AUREL",
+      "headings": ["Begin witha feeling."],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "#/light",
+      "title": "Space, deeply felt. — AUREL",
+      "headings": ["Space, deeply felt."],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "#/projects/dune-house",
+      "title": "Dune House — AUREL",
+      "headings": ["Dune House"],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "#/projects/quiet-gallery",
+      "title": "The Quiet Gallery — AUREL",
+      "headings": ["The Quiet Gallery"],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "#/projects/walnut-room",
+      "title": "The Walnut Room — AUREL",
+      "headings": ["The Walnut Room"],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "#/projects/inner-sanctuary",
+      "title": "Inner Sanctuary — AUREL",
+      "headings": ["Inner Sanctuary"],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "#/",
+      "title": "Space, deeply felt. — AUREL",
+      "headings": ["Space, deeply felt."],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "#/projects",
+      "title": "Selected studies — AUREL",
+      "headings": ["Considered spaces.Lasting impressions."],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "#/studio",
+      "title": "The studio — AUREL",
+      "headings": ["Less noise.More meaning."],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "#/enquiry",
+      "title": "A first thought — AUREL",
+      "headings": ["Begin witha feeling."],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "#/light",
+      "title": "Space, deeply felt. — AUREL",
+      "headings": ["Space, deeply felt."],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "#/projects/dune-house",
+      "title": "Dune House — AUREL",
+      "headings": ["Dune House"],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "#/projects/quiet-gallery",
+      "title": "The Quiet Gallery — AUREL",
+      "headings": ["The Quiet Gallery"],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "#/projects/walnut-room",
+      "title": "The Walnut Room — AUREL",
+      "headings": ["The Walnut Room"],
+      "broken": [],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "route": "#/projects/inner-sanctuary",
+      "title": "Inner Sanctuary — AUREL",
+      "headings": ["Inner Sanctuary"],
+      "broken": [],
+      "overflow": false
+    }
+  ],
+  "accessibility": [
+    {
+      "name": "1440 #/",
+      "violations": []
+    },
+    {
+      "name": "1440 #/projects",
+      "violations": []
+    },
+    {
+      "name": "1440 #/enquiry",
+      "violations": []
+    },
+    {
+      "name": "390 #/",
+      "violations": []
+    },
+    {
+      "name": "390 #/projects",
+      "violations": []
+    },
+    {
+      "name": "390 #/enquiry",
+      "violations": []
+    },
+    {
+      "name": "mobile menu",
+      "violations": []
+    }
+  ],
+  "diagnostics": [
+    {
+      "status": "ready",
+      "frames": 65,
+      "visible": true,
+      "motion": true,
+      "mode": "dusk",
+      "finish": "limestone",
+      "drawCalls": 100,
+      "triangles": 3104,
+      "dpr": 1,
+      "geometries": 51,
+      "textures": 5,
+      "disposed": false
+    },
+    {
+      "status": "ready",
+      "frames": 65,
+      "visible": false,
+      "motion": true,
+      "mode": "dusk",
+      "finish": "limestone",
+      "drawCalls": 100,
+      "triangles": 3104,
+      "dpr": 1,
+      "geometries": 51,
+      "textures": 5,
+      "disposed": false
+    }
+  ],
+  "browser": "154.0.8037.97",
+  "reducedMotionControl": "Motion off"
+}

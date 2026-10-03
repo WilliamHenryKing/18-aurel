@@ -1,0 +1,95 @@
+{
+  "recorded": "2026-10-03",
+  "assets": [
+    {
+      "path": "public/favicon.svg",
+      "bytes": 197,
+      "sha256": "f1e9fe2d7d9d9a854043373c4ee86043e4d59910e6f5777bd3769bf86da25d3f"
+    },
+    {
+      "path": "public/fonts/cormorant-garamond-0.woff2",
+      "bytes": 63640,
+      "sha256": "4d1e61152bd79b53afc8a5b5df37959d23836bbcd3ae5e704a2be018d56a03bf"
+    },
+    {
+      "path": "public/fonts/cormorant-garamond-1.woff2",
+      "bytes": 64332,
+      "sha256": "9d573d6954cf408d846ec493e2030a9379edd11f3f4561ba00b819f158585f3d"
+    },
+    {
+      "path": "public/fonts/cormorant-italic.woff2",
+      "bytes": 65232,
+      "sha256": "c9f6eb3cd37deec53d1c0aaca43e6243f1e6c698dc512cae7de50be24defce25"
+    },
+    {
+      "path": "public/fonts/manrope-latin.woff2",
+      "bytes": 24836,
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
+    },
+    {
+      "path": "public/fonts/OFL-Cormorant-Garamond.txt",
+      "bytes": 4387,
+      "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956"
+    },
+    {
+      "path": "public/fonts/OFL-Manrope.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "public/images/aurel-hero-mobile.webp",
+      "bytes": 52432,
+      "sha256": "e4f62be5f1013262d15e3379d4ee1fbe0dfbdc10053309e0c4228d53a1ecba95"
+    },
+    {
+      "path": "public/images/aurel-hero.webp",
+      "bytes": 223802,
+      "sha256": "ff55f6afde656fea476c1dc591b57c7969d53bc5301691bfec9b97f200656017"
+    },
+    {
+      "path": "public/images/joinery-detail-mobile.webp",
+      "bytes": 51376,
+      "sha256": "11ac45de51f3e4fd648742b7ebb9e78ff35073ff2b883a723f63edf1372394fb"
+    },
+    {
+      "path": "public/images/joinery-detail-small.webp",
+      "bytes": 51376,
+      "sha256": "11ac45de51f3e4fd648742b7ebb9e78ff35073ff2b883a723f63edf1372394fb"
+    },
+    {
+      "path": "public/images/joinery-detail.webp",
+      "bytes": 191022,
+      "sha256": "af37dc28170bc663d2c923d2bb12bb025c5c14644ae74d43da4f4b1305cfc9e3"
+    },
+    {
+      "path": "public/images/LICENSE-Unsplash.txt",
+      "bytes": 1079,
+      "sha256": "65fc13ba976d29ea2e814fbd900dda953bc0db420a6ec952c0725c3efe742ac5"
+    },
+    {
+      "path": "public/images/sanctuary-small.webp",
+      "bytes": 228822,
+      "sha256": "cb6c73ab0c45494d01fccc6f3c1d156475e6f3c10209255c337aa94bbf2c8613"
+    },
+    {
+      "path": "public/images/sanctuary.webp",
+      "bytes": 838644,
+      "sha256": "5a13baf08b5c609821dc49cea1cc8a8de2ee602ea1c4e2b88080038a90252b30"
+    },
+    {
+      "path": "public/images/stair-hall-mobile.webp",
+      "bytes": 49760,
+      "sha256": "ebc8bb30a44954d13cbabe674c72a677fb337cef0b7df95636bd192798d453e4"
+    },
+    {
+      "path": "public/images/stair-hall-small.webp",
+      "bytes": 49760,
+      "sha256": "ebc8bb30a44954d13cbabe674c72a677fb337cef0b7df95636bd192798d453e4"
+    },
+    {
+      "path": "public/images/stair-hall.webp",
+      "bytes": 251318,
+      "sha256": "532ca3ad4c52e00a7047f610016dc7fe87a7c8f37d38e777dbf1bf38cda6a517"
+    }
+  ]
+}

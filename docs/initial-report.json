@@ -1,0 +1,183 @@
+{
+  "slug": "18-aurel",
+  "port": "4628",
+  "browser": "154.0.8037.97",
+  "errors": [],
+  "views": [
+    {
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "h1": ["Space,deeply felt."]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "h1": ["Space,deeply felt."]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "h1": ["Space,deeply felt."]
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "overflow": false,
+      "h1": ["Space,deeply felt."]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "overflow": false,
+      "h1": ["Space,deeply felt."]
+    }
+  ],
+  "axe": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "nodes": [
+        {
+          "target": [".invitation-note"],
+          "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #626b5a, background color: #ded9c9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "text": "AUREL✳",
+      "href": "#/"
+    },
+    {
+      "text": "The work 04",
+      "href": "#/projects"
+    },
+    {
+      "text": "The studio",
+      "href": "#/studio"
+    },
+    {
+      "text": "Begin a conversation ↗",
+      "href": "#/enquiry"
+    },
+    {
+      "text": "Explore the work ↗",
+      "href": "#/projects"
+    },
+    {
+      "text": "Discover below↓",
+      "href": "#/light"
+    },
+    {
+      "text": "Inside the studio ↗",
+      "href": "#/studio"
+    },
+    {
+      "text": "View all studies 04↗",
+      "href": "#/projects"
+    },
+    {
+      "text": "↗01 / 04Architecture / Coastal livingDune House↗",
+      "href": "#/projects/dune-house"
+    },
+    {
+      "text": "↗02 / 04Interiors / A study in stillnessThe Quiet Gallery↗",
+      "href": "#/projects/quiet-gallery"
+    },
+    {
+      "text": "↗03 / 04Finishing / Material & detailThe Walnut Room↗",
+      "href": "#/projects/walnut-room"
+    },
+    {
+      "text": "Our approach ↗",
+      "href": "#/studio"
+    },
+    {
+      "text": "What couldyour space be?↗",
+      "href": "#/enquiry"
+    },
+    {
+      "text": "AUREL",
+      "href": "#/"
+    },
+    {
+      "text": "Start with a thought ↗",
+      "href": "#/enquiry"
+    }
+  ],
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "text": "Skip to content",
+      "label": null,
+      "type": "button"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Menu+",
+      "label": null,
+      "type": "button"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "←",
+      "label": "View pavilion from further left",
+      "type": "button"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "→",
+      "label": "View pavilion from further right",
+      "type": "button"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "☼Daylight",
+      "label": null,
+      "type": "button"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "◐Dusk",
+      "label": null,
+      "type": "button"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Limestone",
+      "label": null,
+      "type": "button"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Basalt",
+      "label": null,
+      "type": "button"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Motion on",
+      "label": null,
+      "type": "button"
+    }
+  ],
+  "diagnostics": {
+    "status": "initialising",
+    "frames": 0,
+    "visible": false,
+    "motion": true,
+    "mode": "dusk",
+    "finish": "limestone",
+    "drawCalls": 0,
+    "triangles": 0,
+    "dpr": 1,
+    "geometries": 0,
+    "textures": 0,
+    "disposed": false
+  }
+}
