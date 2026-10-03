@@ -43,7 +43,7 @@ The user has authorised public GitHub and Cloudflare publication. Root manages p
 
 Routes are `#/`, `#/projects`, `#/projects/<slug>`, `#/studio`, `#/enquiry` and `#/light`. Browser back/forward uses native hash history. Unknown routes render a useful 404 view. Static unknown paths use `public/404.html` through Cloudflare.
 
-Fonts and images are served locally. Keep image pairs (`name.webp`, `name-small.webp`) when adding a study; the hero uses `aurel-hero-mobile.webp`. See [ASSETS.md](ASSETS.md) for exact source and licence information, and `tools/asset-manifest.json` for file sizes and SHA-256 hashes.
+Fonts and images are served locally. Keep image pairs (`name.webp`, `name-small.webp`) when adding a study; the full-height hero retains its detailed source on phones; smaller gallery variants reduce secondary image transfers. See [ASSETS.md](ASSETS.md) for exact source and licence information, and `tools/asset-manifest.json` for file sizes and SHA-256 hashes.
 
 ## Rendering and accessibility
 
@@ -52,3 +52,7 @@ Three.js is a lazy chunk. The renderer uses capped DPR (1.3 below 700px, otherwi
 `window.__AUREL_DIAGNOSTICS__` reports the actual render status, frame count, visibility, motion setting, selected material/hour, DPR, draw calls, triangles, geometries, textures and disposal state. The diagnostic object makes browser inspection possible; it is not a performance certification.
 
 Validation state and outstanding review are recorded in [HANDOFF.md](HANDOFF.md). Design intent is in [DESIGN.md](DESIGN.md).
+
+## Interactive study
+
+![Original Three.js architectural study](docs/media/interaction.webp)

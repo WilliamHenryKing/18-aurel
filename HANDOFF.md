@@ -1,3 +1,9 @@
+# Current release — 3 October 2026
+
+**Complete, public and live:** [AUREL](https://18-aurel.williamking.workers.dev) · [source](https://github.com/WilliamHenryKing/18-aurel). All 71 local browser checks and 24 live asset hashes passed; desktop and phone live checks were clean. Exact application commit, Cloudflare version, limits and maintenance commands are in [docs/RELEASE.md](docs/RELEASE.md). Documentation commits after this release do not change its application identity.
+
+## Earlier implementation handoff (historical)
+
 # AUREL handoff — 3 October 2026
 
 ## Implemented
