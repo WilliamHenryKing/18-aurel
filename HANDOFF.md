@@ -1,4 +1,8 @@
-# Current release — 3 October 2026
+# AUREL refinement handover 4 October 2026
+
+Production resumed on 4 October at William's request. The camera, accessibility and layout corrections are committed locally on `work/website` and described in [docs/IMPECCABLE-REFINEMENT.md](docs/IMPECCABLE-REFINEMENT.md); they are not yet published. The AUREL wide master and two detail regions remain preserved; the remaining detail regions, packaging, final browser/camera QA and the public release are pending, waiting for the shared GPU. The first release below remains the historical verified delivery. See the collection's [refinement handoff](../../ARCHITECTURE-REFINEMENT-HANDOFF.md) for current state.
+
+# First release — 3 October 2026
 
 **Complete, public and live:** [AUREL](https://18-aurel.williamking.workers.dev) · [source](https://github.com/WilliamHenryKing/18-aurel). All 71 local browser checks and 24 live asset hashes passed; desktop and phone live checks were clean. Exact application commit, Cloudflare version, limits and maintenance commands are in [docs/RELEASE.md](docs/RELEASE.md). Documentation commits after this release do not change its application identity.
 

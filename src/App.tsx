@@ -1,12 +1,18 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import { Component, lazy, type ReactNode, Suspense, useEffect, useRef, useState } from "react";
 import { type Project, process, projects } from "./content";
+import Icon from "./Icon";
+import { WorldGallery } from "./WorldGallery";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const LightStudy = lazy(() => import("./LightStudy"));
-const Arrow = () => <span aria-hidden="true">↗</span>;
+const Arrow = () => (
+  <span className="icon-wrap">
+    <Icon />
+  </span>
+);
 const readRoute = () => window.location.hash.replace(/^#\/?/, "").replace(/\/$/, "") || "home";
 
 function Picture({
@@ -45,14 +51,13 @@ function ProjectLink({ project, className = "" }: { project: Project; className?
         <span className="image-open">
           <Arrow />
         </span>
-        <span className="image-index">{project.number} / 04</span>
       </div>
       <div className="project-caption">
         <div>
-          <p className="eyebrow">
+          <h3>{project.title}</h3>
+          <p className="project-meta">
             {project.category} / {project.place}
           </p>
-          <h3>{project.title}</h3>
         </div>
         <Arrow />
       </div>
@@ -60,7 +65,87 @@ function ProjectLink({ project, className = "" }: { project: Project; className?
   );
 }
 
-function Home({ motion }: { motion: boolean }) {
+/** A failed late chunk (offline, or a replaced deployment) must not blank the whole page. */
+class StudyBoundary extends Component<
+  { fallback: ReactNode; children: ReactNode },
+  { failed: boolean }
+> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  render() {
+    return this.state.failed ? this.props.fallback : this.props.children;
+  }
+}
+
+function DeferredLightStudy({ motion, direct }: { motion: boolean; direct: boolean }) {
+  const slot = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(direct);
+  useEffect(() => {
+    if (direct) {
+      setActive(true);
+      return;
+    }
+    if (active || !slot.current) return;
+    if (!("IntersectionObserver" in window)) {
+      setActive(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setActive(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "400px 0px", threshold: 0 },
+    );
+    observer.observe(slot.current);
+    return () => observer.disconnect();
+  }, [active, direct]);
+  const placeholder = (
+    <div className="study-loading">
+      <div className="study-placeholder-lines" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
+      <p>Light, stone and proportion.</p>
+      <span>
+        {active
+          ? "Preparing the interactive pavilion."
+          : "An interactive study of light and material."}
+      </span>
+    </div>
+  );
+  const unavailable = (
+    <div className="study-loading">
+      <div className="study-placeholder-lines" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
+      <p>Light, stone and proportion.</p>
+      <span>The interactive pavilion could not load. Refresh the page to try again.</span>
+    </div>
+  );
+  return (
+    <div className="study-deferred" ref={slot} data-loaded={active}>
+      {active ? (
+        <StudyBoundary fallback={unavailable}>
+          <Suspense fallback={placeholder}>
+            <LightStudy motion={motion} />
+          </Suspense>
+        </StudyBoundary>
+      ) : (
+        placeholder
+      )}
+    </div>
+  );
+}
+
+function Home({ motion, directLight }: { motion: boolean; directLight: boolean }) {
   return (
     <>
       <section className="hero" aria-labelledby="hero-title">
@@ -71,19 +156,14 @@ function Home({ motion }: { motion: boolean }) {
           eager
         />
         <div className="hero-shade" />
-        <div className="hero-topline">
-          <span className="tiny-cross">+</span>
-          <p className="eyebrow">Architecture · Interiors · Finishing</p>
-          <span className="hero-coordinate">A considered perspective.</span>
-        </div>
         <div className="hero-copy">
-          <p className="hero-prelude">A dialogue between light, material and life.</p>
           <h1 id="hero-title">
             <span>Space, </span>
             <span className="hero-title-second">
               deeply <i>felt.</i>
             </span>
           </h1>
+          <p className="hero-prelude">A dialogue between light, material and life.</p>
         </div>
         <div className="hero-bottom">
           <a className="text-link" href="#/projects">
@@ -100,25 +180,22 @@ function Home({ motion }: { motion: boolean }) {
             aria-label="Explore the interactive light study"
           >
             <span>Discover below</span>
-            <span aria-hidden="true">↓</span>
+            <span className="icon-wrap">
+              <Icon name="down" />
+            </span>
           </a>
         </div>
-        <div className="hero-side">DUNE HOUSE — CONCEPT STUDY 01</div>
       </section>
       <section className="introduction section-pad">
-        <p className="eyebrow reveal">01 / The Aurel perspective</p>
         <div className="introduction-main">
-          <h2 className="reveal">
+          <h2>
             Good spaces are seen.
             <br />
             <span>
               Great spaces are <i>felt.</i>
             </span>
           </h2>
-          <div className="intro-bottom reveal">
-            <span className="asterisk" aria-hidden="true">
-              ✳
-            </span>
+          <div className="intro-bottom">
             <p>
               We explore architecture from the inside out. The way light falls. The warmth of a
               surface. The quiet balance of a room. Spaces with a lasting sense of belonging.
@@ -130,27 +207,25 @@ function Home({ motion }: { motion: boolean }) {
         </div>
       </section>
       <section className="selected section-pad" aria-labelledby="selected-title">
-        <div className="section-heading reveal">
+        <div className="section-heading">
           <div>
-            <p className="eyebrow">02 / Selected studies</p>
             <h2 id="selected-title">
               Places with <i>presence.</i>
             </h2>
           </div>
           <a className="text-link" href="#/projects">
-            View all studies <span className="link-count">04</span>
+            View all studies
             <Arrow />
           </a>
         </div>
         <div className="selected-grid">
           {projects.slice(0, 3).map((p, i) => (
-            <ProjectLink key={p.slug} project={p} className={`project-${i} reveal`} />
+            <ProjectLink key={p.slug} project={p} className={`project-${i}`} />
           ))}
         </div>
       </section>
       <section className="light-section" id="light-study" aria-labelledby="light-title">
         <div className="light-heading section-pad">
-          <p className="eyebrow">03 / An experiment in atmosphere</p>
           <div>
             <h2 id="light-title">
               One space.
@@ -163,53 +238,27 @@ function Home({ motion }: { motion: boolean }) {
             </p>
           </div>
         </div>
-        <Suspense
-          fallback={
-            <div className="study-loading">
-              <span className="eyebrow">Preparing the light pavilion</span>
-              <p>Light, stone and proportion.</p>
-            </div>
-          }
-        >
-          <LightStudy motion={motion} />
-        </Suspense>
+        <DeferredLightStudy motion={motion} direct={directLight} />
       </section>
-      <section className="material-section section-pad">
-        <div className="material-visual reveal">
-          <Picture
-            name="joinery-detail"
-            alt="Walnut cabinetry meets vein-cut travertine and a precisely detailed bronze handle"
-          />
-          <span className="vertical-caption">THE POETRY OF MATERIAL</span>
-        </div>
-        <div className="material-copy">
-          <p className="eyebrow reveal">04 / From gesture to grain</p>
-          <h2 className="reveal">
+      <section className="material-section" aria-labelledby="material-title">
+        <div className="material-heading section-pad">
+          <h2 id="material-title">
             The difference
             <br />
             is in the <i>detail.</i>
           </h2>
-          <p className="reveal">
-            The best details don’t ask for attention. You notice them in the way a door closes, how
-            a hand meets a rail, or the soft edge of afternoon light.
-          </p>
-          <a className="text-link reveal" href="#/studio">
-            Our approach <Arrow />
-          </a>
-          <div className="material-samples reveal">
-            <div>
-              <span className="sample stone" />
-              <span>01 / Stone</span>
-            </div>
-            <div>
-              <span className="sample bronze" />
-              <span>02 / Bronze</span>
-            </div>
-            <div>
-              <span className="sample timber" />
-              <span>03 / Timber</span>
-            </div>
+          <div>
+            <p>
+              The best details don’t ask for attention. You notice them in the way a door closes,
+              how a hand meets a rail, or the soft edge of afternoon light.
+            </p>
+            <a className="text-link" href="#/studio">
+              Our approach <Arrow />
+            </a>
           </div>
+        </div>
+        <div className="material-figure section-pad">
+          <WorldGallery />
         </div>
       </section>
       <Invitation />
@@ -220,15 +269,14 @@ function Home({ motion }: { motion: boolean }) {
 function Invitation() {
   return (
     <section className="invitation section-pad">
-      <p className="eyebrow reveal">Every space starts with a conversation.</p>
-      <a href="#/enquiry" className="invitation-link reveal">
+      <a href="#/enquiry" className="invitation-link">
         <span>
           What could
           <br />
           your space <i>be?</i>
         </span>
         <span className="invitation-arrow" aria-hidden="true">
-          ↗
+          <Icon />
         </span>
       </a>
       <p className="invitation-note">A little thought. A new possibility.</p>
@@ -242,7 +290,6 @@ function Work() {
   return (
     <>
       <section className="page-heading section-pad">
-        <p className="eyebrow">The portfolio / 2026</p>
         <h1>
           Considered spaces.
           <br />
@@ -253,7 +300,7 @@ function Work() {
             A collection of speculative studies in architecture, interiors and the details that
             bring them together.
           </p>
-          <span className="eyebrow">04 studies / One perspective</span>
+          <span className="collection-count">Four concept studies</span>
         </div>
       </section>
       <section className="work-section section-pad" aria-label="Project studies">
@@ -267,9 +314,6 @@ function Work() {
               onClick={() => setFilter(item)}
             >
               {item}
-              <span>
-                {item === "All" ? "04" : `0${projects.filter((p) => p.category === item).length}`}
-              </span>
             </button>
           ))}
         </fieldset>
@@ -293,16 +337,13 @@ function Detail({ project }: { project: Project }) {
     <>
       <section className="detail-heading section-pad">
         <a className="back-link" href="#/projects">
-          ← All studies
+          <Icon name="left" /> All studies
         </a>
         <div>
-          <p className="eyebrow">
-            Study {project.number} / {project.category}
-          </p>
           <h1>{project.title}</h1>
           <p className="detail-idea">{project.idea}</p>
         </div>
-        <span className="eyebrow">Concept / {project.year}</span>
+        <span className="meta-label">Concept / {project.year}</span>
       </section>
       <div className="detail-hero">
         <Picture name={project.image} alt={project.alt} eager />
@@ -310,29 +351,29 @@ function Detail({ project }: { project: Project }) {
       <section className="detail-body section-pad">
         <div className="detail-facts">
           <div>
-            <span className="eyebrow">Discipline</span>
+            <span className="meta-label">Discipline</span>
             <p>{project.category}</p>
           </div>
           <div>
-            <span className="eyebrow">Exploration</span>
+            <span className="meta-label">Exploration</span>
             <p>{project.place}</p>
           </div>
           <div>
-            <span className="eyebrow">Palette</span>
+            <span className="meta-label">Palette</span>
             <p>{project.material}</p>
           </div>
           <div>
-            <span className="eyebrow">Status</span>
+            <span className="meta-label">Status</span>
             <p>Speculative concept study</p>
           </div>
         </div>
         <div>
-          <h2 className="reveal">
+          <h2>
             A feeling,
             <br />
             <i>made tangible.</i>
           </h2>
-          <p className="detail-description reveal">{project.description}</p>
+          <p className="detail-description">{project.description}</p>
           <p className="image-disclosure">{project.imageNote}</p>
           <a className="text-link" href="#/enquiry">
             Explore your own brief <Arrow />
@@ -341,7 +382,7 @@ function Detail({ project }: { project: Project }) {
       </section>
       {next && (
         <a className="next-project section-pad" href={`#/projects/${next.slug}`}>
-          <span className="eyebrow">Next study / {next.number}</span>
+          <span className="meta-label">Next study</span>
           <span>{next.title}</span>
           <Arrow />
         </a>
@@ -354,7 +395,6 @@ function Studio() {
   return (
     <>
       <section className="page-heading studio-heading section-pad">
-        <p className="eyebrow">The studio / A way of seeing</p>
         <h1>
           Less noise.
           <br />
@@ -365,7 +405,6 @@ function Studio() {
             AUREL is a fictional design practice exploring a simple idea: the most memorable spaces
             make us feel something.
           </p>
-          <span className="eyebrow">Architecture / Interiors / Finishing</span>
         </div>
       </section>
       <div className="studio-image">
@@ -381,35 +420,32 @@ function Studio() {
         </p>
       </div>
       <section className="studio-belief section-pad">
-        <p className="eyebrow reveal">Our perspective</p>
-        <h2 className="reveal">
+        <h2>
           We believe in spaces
           <br />
           that grow <i>closer</i>
           <br />
           with time.
         </h2>
-        <p className="reveal">
+        <p>
           A surface that becomes more beautiful with use. A room that changes with the seasons. A
           plan that understands how life unfolds. Our studies begin with these everyday,
           extraordinary things.
         </p>
       </section>
       <section className="process-section section-pad">
-        <div className="section-heading reveal">
+        <div className="section-heading">
           <div>
-            <p className="eyebrow">How an idea becomes a place</p>
             <h2>
               A considered <i>process.</i>
             </h2>
           </div>
         </div>
         {process.map((item) => (
-          <article className="process-row reveal" key={item.number}>
-            <span className="eyebrow">{item.number}</span>
+          <article className="process-row" key={item.number}>
             <div>
-              <p className="eyebrow">{item.subtitle}</p>
               <h3>{item.title}</h3>
+              <p className="meta-label">{item.subtitle}</p>
             </div>
             <p>{item.copy}</p>
           </article>
@@ -439,7 +475,6 @@ function Enquiry() {
   return (
     <section className="enquiry section-pad">
       <div className="enquiry-intro">
-        <p className="eyebrow">A first thought</p>
         <h1>
           Begin with
           <br />a <i>feeling.</i>
@@ -450,7 +485,6 @@ function Enquiry() {
           Just an idea of what could be.
         </p>
         <div className="enquiry-note">
-          <span className="tiny-cross">+</span>
           <p>
             This is an interactive concept studio. Build a brief to keep for yourself. It downloads
             to your device; nothing is sent, stored or submitted.
@@ -459,9 +493,7 @@ function Enquiry() {
       </div>
       <form className="brief-form" onSubmit={download}>
         <fieldset>
-          <legend>
-            <span>01</span> What are you imagining?
-          </legend>
+          <legend>What are you imagining?</legend>
           <div className="choice-grid">
             {["A new home", "A renewed interior", "The finishing details", "Something else"].map(
               (item) => (
@@ -477,16 +509,13 @@ function Enquiry() {
                     }}
                   />
                   {item}
-                  <span aria-hidden="true">↗</span>
                 </label>
               ),
             )}
           </div>
         </fieldset>
         <div className="form-field">
-          <label htmlFor="feeling">
-            <span>02</span> How should it feel?
-          </label>
+          <label htmlFor="feeling">How should it feel?</label>
           <select
             id="feeling"
             value={feeling}
@@ -504,7 +533,7 @@ function Enquiry() {
         </div>
         <div className="form-field">
           <label htmlFor="notes">
-            <span>03</span> Anything on your mind? <small>(Optional)</small>
+            Anything on your mind? <small>(Optional)</small>
           </label>
           <textarea
             id="notes"
@@ -520,7 +549,10 @@ function Enquiry() {
           <p className="form-help">Keep this about the space. No personal details needed.</p>
         </div>
         <button type="submit" className="brief-submit">
-          Save my first thought <span aria-hidden="true">↓</span>
+          Save my first thought{" "}
+          <span className="icon-wrap">
+            <Icon name="down" />
+          </span>
         </button>
         <p className="download-status" role="status">
           {downloaded
@@ -560,10 +592,17 @@ export default function App() {
       setMenu(false);
     };
     const onNavigationClick = (event: MouseEvent) => {
-      if (event.target instanceof Element && event.target.closest(".site-header a")) setMenu(false);
+      const link =
+        event.target instanceof Element
+          ? event.target.closest<HTMLAnchorElement>(".site-header a")
+          : null;
+      if (link) {
+        setMenu(false);
+        if (link.hash === location.hash) document.querySelector<HTMLElement>("main")?.focus();
+      }
     };
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && menuButton.current?.getAttribute("aria-expanded") === "true") {
         setMenu(false);
         menuButton.current?.focus();
       }
@@ -605,36 +644,20 @@ export default function App() {
   useGSAP(
     () => {
       if (!motion) return;
-      const timeline = gsap.timeline({ defaults: { ease: "power3.out" } });
-      if (home) {
-        timeline
-          .from(".hero-image", { scale: 1.075, duration: 2.1 })
-          .from(
-            ".hero-copy h1 > span",
-            { yPercent: 110, opacity: 0, duration: 1.4, stagger: 0.16 },
-            0.18,
-          )
-          .from(
-            ".hero-prelude, .hero-bottom, .hero-topline",
-            { y: 18, opacity: 0, duration: 1.1, stagger: 0.12 },
-            0.6,
-          );
-      } else timeline.from("main h1", { y: 34, opacity: 0, duration: 0.9 });
-      for (const node of root.current?.querySelectorAll<HTMLElement>(".reveal") ?? []) {
-        gsap.from(node, {
-          y: 36,
-          opacity: 0,
-          duration: 1.05,
-          ease: "power2.out",
-          scrollTrigger: { trigger: node, start: "top 94%", once: true },
-        });
+      if (home && route !== "light") {
+        gsap.from(".hero-image", { scale: 1.025, duration: 1.25, ease: "power2.out" });
+        const material = root.current?.querySelector(".world-image");
+        if (material) {
+          const sequence = gsap.timeline({
+            scrollTrigger: { trigger: material, start: "top 82%", once: true },
+            defaults: { ease: "expo.out" },
+          });
+          sequence
+            .fromTo(".material-aperture", { scaleX: 1 }, { scaleX: 0, duration: 0.85 })
+            .from(".world-image img", { scale: 1.045, duration: 1.2 }, 0)
+            .from(".world-gallery figcaption", { opacity: 0.35, duration: 0.45 }, 0.5);
+        }
       }
-      if (home)
-        gsap.to(".hero-image img", {
-          yPercent: 9,
-          ease: "none",
-          scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 0.6 },
-        });
     },
     { scope: root, dependencies: [route, motion], revertOnUpdate: true },
   );
@@ -660,7 +683,7 @@ export default function App() {
       </button>
       <header className={`site-header ${menu ? "menu-open" : ""}`}>
         <a href="#/" className="wordmark" aria-label="Aurel home">
-          AUREL<span className="wordmark-dot">✳</span>
+          AUREL
         </a>
         <span className="header-description">Spaces with soul.</span>
         <button
@@ -672,11 +695,11 @@ export default function App() {
           onClick={() => setMenu(!menu)}
         >
           {menu ? "Close" : "Menu"}
-          <span aria-hidden="true">{menu ? "−" : "+"}</span>
+          <Icon name={menu ? "close" : "menu"} />
         </button>
         <nav id="primary-nav" className={menu ? "open" : ""} aria-label="Primary navigation">
           <a href="#/projects" aria-current={route.startsWith("projects") ? "page" : undefined}>
-            The work <span>04</span>
+            The work
           </a>
           <a href="#/studio" aria-current={route === "studio" ? "page" : undefined}>
             The studio
@@ -692,7 +715,7 @@ export default function App() {
       </header>
       <main id="main-content" tabIndex={-1}>
         {home ? (
-          <Home motion={motion} />
+          <Home motion={motion} directLight={route === "light"} />
         ) : project ? (
           <Detail project={project} />
         ) : route === "projects" ? (
@@ -703,7 +726,6 @@ export default function App() {
           <Enquiry />
         ) : !known ? (
           <section className="not-found section-pad">
-            <p className="eyebrow">A small detour / 404</p>
             <h1>
               This space is
               <br />
@@ -742,7 +764,9 @@ export default function App() {
             onClick={toggleMotion}
           >
             <span className={motion ? "motion-dot on" : "motion-dot"} />
-            Motion {motion ? "on" : "off"}
+            <span>
+              Motion <span aria-hidden="true">{motion ? "on" : "off"}</span>
+            </span>
           </button>
         </div>
       </footer>

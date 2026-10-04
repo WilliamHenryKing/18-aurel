@@ -1,6 +1,19 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import Icon from "./Icon";
+import { cameraPath, cameraTargets, lightChapters, mobilePullback } from "./lightJourney";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin);
+
+// Reverting a context renders its recorded timeline at the start before cleanups run.
+// That render is bookkeeping, not a camera move, so the journey ignores it.
+const reverting = () =>
+  Boolean((gsap.core as unknown as { reverting?: () => unknown }).reverting?.());
 
 type Mode = "daylight" | "dusk";
 type Finish = "limestone" | "basalt";
@@ -17,6 +30,17 @@ type Diagnostics = {
   geometries: number;
   textures: number;
   disposed: boolean;
+  cameraOwner: "scroll" | "visitor" | "static";
+  journeyProgress: number;
+  scrollProgress: number;
+  chapter: string;
+  camera: [number, number, number];
+  target: [number, number, number];
+  scrollTriggerActive: boolean;
+  journeyEnabled: boolean;
+  scrollStart: number;
+  scrollEnd: number;
+  renderPending: boolean;
   error?: string;
 };
 declare global {
@@ -51,15 +75,59 @@ function surfaceTexture() {
 }
 
 export default function LightStudy({ motion }: { motion: boolean }) {
+  const root = useRef<HTMLDivElement>(null);
+  const track = useRef<HTMLDivElement>(null);
+  const panel = useRef<HTMLDivElement>(null);
+  const controls = useRef<HTMLDivElement>(null);
+  const progressFill = useRef<HTMLSpanElement>(null);
   const host = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<Mode>("dusk");
   const [finish, setFinish] = useState<Finish>("limestone");
   const [view, setView] = useState(0);
   const [status, setStatus] = useState("loading");
+  const [chapter, setChapter] = useState(0);
+  const chapterIndex = useRef(0);
+  const [following, setFollowing] = useState(true);
+  const [scrollReady, setScrollReady] = useState(false);
+  const [announcement, setAnnouncement] = useState("");
+  const journey = useRef({
+    progress: 0,
+    scrollProgress: 0,
+    following: true,
+    enabled: false,
+    pointerEnabled: false,
+  });
+  const travel = useRef<gsap.core.Timeline | null>(null);
+  const scrollTween = useRef<gsap.core.Tween | null>(null);
   const settings = useRef({ mode, finish, motion, view });
-  const update = useRef<(() => void) | null>(null);
+  const update = useRef<((frames?: number) => void) | null>(null);
+
+  const applyProgress = (value: number, frames = 12) => {
+    journey.current.progress = THREE.MathUtils.clamp(value, 0, 1);
+    if (progressFill.current)
+      progressFill.current.style.transform = `scaleX(${journey.current.progress})`;
+    const next = value < 0.26 ? 0 : value < 0.76 ? 1 : 2;
+    if (next !== chapterIndex.current) {
+      chapterIndex.current = next;
+      setChapter(next);
+    }
+    update.current?.(frames);
+  };
+
+  const takeControl = (pointerEnabled = false) => {
+    scrollTween.current?.kill();
+    journey.current.following = false;
+    journey.current.pointerEnabled = pointerEnabled;
+    setFollowing(false);
+    update.current?.();
+  };
   useEffect(() => {
-    settings.current = { mode, finish, motion, view };
+    settings.current = {
+      mode,
+      finish,
+      motion: motion && !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      view,
+    };
     update.current?.();
   }, [mode, finish, motion, view]);
 
@@ -79,6 +147,17 @@ export default function LightStudy({ motion }: { motion: boolean }) {
       geometries: 0,
       textures: 0,
       disposed: false,
+      cameraOwner: "static",
+      journeyProgress: 0,
+      scrollProgress: 0,
+      chapter: "threshold",
+      camera: [0, 0, 0],
+      target: [0, 0, 0],
+      scrollTriggerActive: false,
+      journeyEnabled: false,
+      scrollStart: 0,
+      scrollEnd: 0,
+      renderPending: false,
     };
     window.__AUREL_DIAGNOSTICS__ = diagnostic;
     let renderer: THREE.WebGLRenderer;
@@ -92,7 +171,9 @@ export default function LightStudy({ motion }: { motion: boolean }) {
       setStatus("fallback");
       diagnostic.status = "fallback";
       diagnostic.error = String(error);
-      return;
+      return () => {
+        diagnostic.disposed = true;
+      };
     }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 700 ? 1.3 : 1.65));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -102,7 +183,7 @@ export default function LightStudy({ motion }: { motion: boolean }) {
     renderer.shadowMap.type = THREE.PCFShadowMap;
     renderer.domElement.setAttribute(
       "aria-label",
-      "Three-dimensional architectural light pavilion. Use the controls below to change its light, stone and viewpoint.",
+      "Interactive architectural section showing the threshold, timber screen and water. Named views, lighting and stone controls follow the scene.",
     );
     renderer.domElement.setAttribute("role", "img");
     element.appendChild(renderer.domElement);
@@ -110,13 +191,18 @@ export default function LightStudy({ motion }: { motion: boolean }) {
     scene.background = new THREE.Color("#242824");
     scene.fog = new THREE.Fog("#242824", 23, 45);
     const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 70);
-    const room = new RoomEnvironment();
-    const pmrem = new THREE.PMREMGenerator(renderer);
-    const environment = pmrem.fromScene(room, 0.06);
+    // Render-target contents do not survive a lost context; restore rebuilds this map.
+    const buildEnvironment = () => {
+      const room = new RoomEnvironment();
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      const target = pmrem.fromScene(room, 0.06);
+      room.dispose();
+      pmrem.dispose();
+      return target;
+    };
+    let environment = buildEnvironment();
     scene.environment = environment.texture;
     scene.environmentIntensity = 0.32;
-    room.dispose();
-    pmrem.dispose();
     const stoneMap = surfaceTexture();
     const stone = new THREE.MeshStandardMaterial({
       color: "#bdaf95",
@@ -268,28 +354,54 @@ export default function LightStudy({ motion }: { motion: boolean }) {
     let frame = 0;
     let remaining = 0;
     let disposed = false;
-    let currentAngle = 0.48;
-    let currentElevation = 0.37;
-    let targetElevation = 0.37;
+    let contextLost = false;
+    const curve = new THREE.CatmullRomCurve3(
+      cameraPath.map((point) => new THREE.Vector3(...point)),
+    );
+    const lookCurve = new THREE.CatmullRomCurve3(
+      cameraTargets.map((point) => new THREE.Vector3(...point)),
+    );
+    const mobileCurve = new THREE.CatmullRomCurve3(
+      cameraPath.map((point, index) => {
+        const target = new THREE.Vector3(...(cameraTargets[index] ?? [0, 0.85, 0]));
+        return new THREE.Vector3(...point)
+          .sub(target)
+          .multiplyScalar(mobilePullback[index] ?? 1.2)
+          .add(target);
+      }),
+    );
+    const wantedPosition = new THREE.Vector3();
+    const wantedTarget = new THREE.Vector3();
+    const currentTarget = lookCurve.getPoint(0);
+    const cameraOffset = new THREE.Vector3();
+    const up = new THREE.Vector3(0, 1, 0);
+    let pointerLift = 0;
+    let firstFrame = true;
     const dayColor = new THREE.Color("#c4bda9");
     const duskColor = new THREE.Color("#242824");
     const paleStone = new THREE.Color("#bdaf95");
     const basaltStone = new THREE.Color("#525956");
     const render = () => {
       frame = 0;
-      if (disposed || !active || document.hidden) return;
+      diagnostic.renderPending = false;
+      if (disposed || contextLost || !active || document.hidden) return;
       const s = settings.current;
       const daylight = s.mode === "daylight";
       const blend = s.motion ? 0.12 : 1;
-      currentAngle = THREE.MathUtils.lerp(currentAngle, 0.48 + s.view * 0.24, blend);
-      currentElevation = THREE.MathUtils.lerp(currentElevation, targetElevation, blend);
-      const distance = element.clientWidth < 650 ? 20.5 : 17.2;
-      camera.position.set(
-        Math.sin(currentAngle) * distance,
-        distance * currentElevation,
-        Math.cos(currentAngle) * distance,
-      );
-      camera.lookAt(0, 0.8, 0);
+      const j = journey.current;
+      (element.clientWidth < 650 ? mobileCurve : curve).getPoint(j.progress, wantedPosition);
+      lookCurve.getPoint(j.progress, wantedTarget);
+      cameraOffset
+        .copy(wantedPosition)
+        .sub(wantedTarget)
+        .applyAxisAngle(up, s.view * 0.15);
+      wantedPosition.copy(wantedTarget).add(cameraOffset);
+      if (!j.following && j.pointerEnabled && s.motion) wantedPosition.y += pointerLift;
+      const cameraBlend = firstFrame || !s.motion ? 1 : 0.2;
+      camera.position.lerp(wantedPosition, cameraBlend);
+      currentTarget.lerp(wantedTarget, cameraBlend);
+      camera.lookAt(currentTarget);
+      firstFrame = false;
       (scene.background as THREE.Color).lerp(daylight ? dayColor : duskColor, blend);
       (scene.fog as THREE.Fog).color.copy(scene.background as THREE.Color);
       stone.color.lerp(s.finish === "limestone" ? paleStone : basaltStone, blend);
@@ -314,11 +426,27 @@ export default function LightStudy({ motion }: { motion: boolean }) {
       diagnostic.geometries = renderer.info.memory.geometries;
       diagnostic.textures = renderer.info.memory.textures;
       diagnostic.dpr = renderer.getPixelRatio();
-      if (--remaining > 0 && s.motion) frame = requestAnimationFrame(render);
+      diagnostic.cameraOwner = !s.motion
+        ? "static"
+        : j.following && j.enabled
+          ? "scroll"
+          : "visitor";
+      diagnostic.journeyProgress = j.progress;
+      diagnostic.scrollProgress = j.scrollProgress;
+      diagnostic.chapter = lightChapters[chapterIndex.current]?.id ?? "threshold";
+      diagnostic.camera = camera.position.toArray();
+      diagnostic.target = currentTarget.toArray();
+      if (--remaining > 0 && s.motion) {
+        frame = requestAnimationFrame(render);
+        diagnostic.renderPending = true;
+      }
     };
-    const request = () => {
-      remaining = settings.current.motion ? 65 : 1;
-      if (!frame && active && !document.hidden) frame = requestAnimationFrame(render);
+    const request = (frames = 48) => {
+      remaining = Math.max(remaining, settings.current.motion ? frames : 1);
+      if (!frame && active && !contextLost && !document.hidden) {
+        frame = requestAnimationFrame(render);
+        diagnostic.renderPending = true;
+      }
     };
     update.current = request;
     const resize = () => {
@@ -330,46 +458,89 @@ export default function LightStudy({ motion }: { motion: boolean }) {
       );
       renderer.setSize(width, height, false);
       camera.aspect = width / height;
+      // Wide desktop stages would otherwise open the horizontal view past 90 degrees and
+      // shrink the pavilion; narrow the vertical angle so the section keeps its scale.
+      camera.fov = camera.aspect > 2.1 ? 34 * Math.sqrt(2.1 / camera.aspect) : 34;
       camera.updateProjectionMatrix();
       request();
     };
     const observer = new ResizeObserver(resize);
     observer.observe(element);
-    const visibility = new IntersectionObserver(
-      ([entry]) => {
-        active = Boolean(entry?.isIntersecting);
-        diagnostic.visible = active;
-        if (active) request();
-        else if (frame) {
-          cancelAnimationFrame(frame);
-          frame = 0;
-        }
-      },
-      { rootMargin: "100px" },
-    );
-    visibility.observe(element);
+    const setActive = (visible: boolean) => {
+      active = !contextLost && visible;
+      diagnostic.visible = active;
+      if (active) request();
+      else if (frame) {
+        cancelAnimationFrame(frame);
+        frame = 0;
+        diagnostic.renderPending = false;
+      }
+    };
+    // The newest record wins when the browser batches an enter and a leave together.
+    const visibility =
+      "IntersectionObserver" in window
+        ? new IntersectionObserver(
+            (entries) => setActive(Boolean(entries.at(-1)?.isIntersecting)),
+            {
+              rootMargin: "100px",
+            },
+          )
+        : null;
+    if (visibility) visibility.observe(element);
+    else setActive(true);
     const onVisibility = () => {
       if (document.hidden && frame) {
         cancelAnimationFrame(frame);
         frame = 0;
+        diagnostic.renderPending = false;
       } else request();
     };
     document.addEventListener("visibilitychange", onVisibility);
     const onPointer = (event: PointerEvent) => {
-      if (event.pointerType !== "mouse" || !settings.current.motion) return;
+      if (
+        event.pointerType !== "mouse" ||
+        !settings.current.motion ||
+        journey.current.following ||
+        !journey.current.pointerEnabled
+      )
+        return;
       const bounds = element.getBoundingClientRect();
-      targetElevation = 0.34 + ((event.clientY - bounds.top) / bounds.height) * 0.055;
+      pointerLift = ((event.clientY - bounds.top) / bounds.height - 0.5) * 0.16;
+      request();
+    };
+    const onPointerLeave = () => {
+      if (!pointerLift) return;
+      pointerLift = 0;
       request();
     };
     const onLost = (event: Event) => {
       event.preventDefault();
+      // Release the reflection target while the context is gone (GL calls are no-ops now).
+      environment.dispose();
       setStatus("fallback");
+      contextLost = true;
       active = false;
       diagnostic.status = "context-lost";
+      diagnostic.visible = false;
+      diagnostic.renderPending = false;
       if (frame) cancelAnimationFrame(frame);
+      frame = 0;
+    };
+    // Three re-initialises its GL state on restore; the study only needs to resume drawing.
+    const onRestored = () => {
+      if (disposed) return;
+      environment = buildEnvironment();
+      scene.environment = environment.texture;
+      contextLost = false;
+      firstFrame = true;
+      diagnostic.status = "ready";
+      setStatus("ready");
+      setActive(true);
     };
     element.addEventListener("pointermove", onPointer);
+    element.addEventListener("pointerleave", onPointerLeave);
     renderer.domElement.addEventListener("webglcontextlost", onLost);
+    renderer.domElement.addEventListener("webglcontextrestored", onRestored);
     resize();
     setStatus("ready");
     return () => {
@@ -377,10 +548,12 @@ export default function LightStudy({ motion }: { motion: boolean }) {
       if (frame) cancelAnimationFrame(frame);
       update.current = null;
       observer.disconnect();
-      visibility.disconnect();
+      visibility?.disconnect();
       document.removeEventListener("visibilitychange", onVisibility);
       element.removeEventListener("pointermove", onPointer);
+      element.removeEventListener("pointerleave", onPointerLeave);
       renderer.domElement.removeEventListener("webglcontextlost", onLost);
+      renderer.domElement.removeEventListener("webglcontextrestored", onRestored);
       for (const geometry of geometries) geometry.dispose();
       for (const material of materials) material.dispose();
       stoneMap.dispose();
@@ -392,86 +565,307 @@ export default function LightStudy({ motion }: { motion: boolean }) {
       diagnostic.status = "disposed";
       diagnostic.disposed = true;
       diagnostic.visible = false;
+      diagnostic.renderPending = false;
+      diagnostic.scrollTriggerActive = false;
+      diagnostic.journeyEnabled = false;
     };
   }, []);
 
+  useGSAP(
+    () => {
+      if (!motion || status !== "ready") return;
+      const media = gsap.matchMedia();
+      media.add("(prefers-reduced-motion: no-preference) and (min-height: 600px)", () => {
+        if (!track.current || !panel.current) return;
+        journey.current.enabled = true;
+        if (window.__AUREL_DIAGNOSTICS__) window.__AUREL_DIAGNOSTICS__.journeyEnabled = true;
+        setScrollReady(true);
+        const playhead = { progress: 0 };
+        const sequence = gsap.timeline({
+          defaults: { ease: "none" },
+          scrollTrigger: {
+            id: "aurel-light-journey",
+            trigger: track.current,
+            start: "top 20px",
+            end: () =>
+              `+=${Math.max(1, (track.current?.offsetHeight ?? 0) - (panel.current?.offsetHeight ?? 0))}`,
+            scrub: 0.55,
+            invalidateOnRefresh: true,
+            onRefresh: (self) => {
+              const diagnostic = window.__AUREL_DIAGNOSTICS__;
+              if (diagnostic) {
+                diagnostic.scrollStart = self.start;
+                diagnostic.scrollEnd = self.end;
+              }
+            },
+            onToggle: (self) => {
+              const diagnostic = window.__AUREL_DIAGNOSTICS__;
+              if (diagnostic) diagnostic.scrollTriggerActive = self.isActive;
+            },
+          },
+          onUpdate: () => {
+            if (reverting()) return;
+            journey.current.scrollProgress = playhead.progress;
+            if (journey.current.following) applyProgress(playhead.progress);
+            const diagnostic = window.__AUREL_DIAGNOSTICS__;
+            if (diagnostic) diagnostic.scrollProgress = playhead.progress;
+          },
+        });
+        // A measured approach, a pause at the screen, then a lateral move to water.
+        // CSS supplies the single sticky stage; ScrollTrigger never captures wheel or touch input.
+        sequence
+          .addLabel("threshold", 0)
+          .to(playhead, { progress: 0.04, duration: 0.25 })
+          .to(playhead, { progress: 0.5, duration: 1.15, ease: "power1.inOut" })
+          .addLabel("timber")
+          .to(playhead, { progress: 0.5, duration: 0.28 })
+          .to(playhead, { progress: 1, duration: 1.2, ease: "power1.inOut" })
+          .addLabel("water")
+          .to(playhead, { progress: 1, duration: 0.24 });
+        travel.current = sequence;
+        const refreshFrame = requestAnimationFrame(() => ScrollTrigger.refresh());
+        return () => {
+          cancelAnimationFrame(refreshFrame);
+          scrollTween.current?.kill();
+          journey.current.enabled = false;
+          travel.current = null;
+          setScrollReady(false);
+          const diagnostic = window.__AUREL_DIAGNOSTICS__;
+          if (diagnostic) {
+            diagnostic.scrollTriggerActive = false;
+            diagnostic.journeyEnabled = false;
+          }
+        };
+      });
+      return () => media.revert();
+    },
+    { scope: root, dependencies: [motion, status], revertOnUpdate: true },
+  );
+
+  // Programmatic scroll tweens deliberately live outside the useGSAP context: reverting a
+  // context re-renders its recorded tweens at their start, which would yank the page back.
+  useEffect(() => () => void scrollTween.current?.kill(), []);
+
+  const jumpToChapter = (index: number) => {
+    const destination = lightChapters[index];
+    if (!destination) return;
+    scrollTween.current?.kill();
+    setView(0);
+    setAnnouncement(`${destination.label} view`);
+    const sequence = travel.current;
+    const trigger = sequence?.scrollTrigger;
+    if (sequence && trigger && journey.current.enabled) {
+      journey.current.following = true;
+      journey.current.pointerEnabled = false;
+      setFollowing(true);
+      applyProgress(journey.current.scrollProgress, 48);
+      const labelTime = sequence.labels[destination.id] ?? 0;
+      scrollTween.current = gsap.to(window, {
+        duration: 0.8,
+        ease: "power2.inOut",
+        scrollTo: {
+          y: trigger.start + (trigger.end - trigger.start) * (labelTime / sequence.duration()),
+          autoKill: true,
+        },
+      });
+    } else {
+      takeControl();
+      applyProgress(destination.progress, 48);
+    }
+  };
+
+  const toggleCamera = () => {
+    if (following) takeControl();
+    else {
+      journey.current.following = true;
+      journey.current.pointerEnabled = false;
+      setFollowing(true);
+      setView(0);
+      applyProgress(journey.current.scrollProgress, 48);
+    }
+  };
+
+  const skipJourney = () => {
+    const destination = controls.current;
+    if (!destination) return;
+    takeControl();
+    const focusControls = () =>
+      destination.querySelector<HTMLButtonElement>("button")?.focus({ preventScroll: true });
+    if (motion && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      scrollTween.current = gsap.to(window, {
+        duration: 0.65,
+        ease: "power2.out",
+        scrollTo: { y: destination, offsetY: 24, autoKill: true, onAutoKill: focusControls },
+        onComplete: focusControls,
+        onInterrupt: focusControls,
+      });
+    } else {
+      destination.scrollIntoView({ behavior: "instant", block: "start" });
+      focusControls();
+    }
+  };
+
   return (
-    <div className={`light-experience mode-${mode}`}>
-      <div className="study-meta">
-        <span className="eyebrow">AUREL / Light Pavilion No. 01</span>
-        <span className="eyebrow">
-          {mode === "daylight" ? "11:00 / Sunlit" : "18:30 / Afterglow"}
-        </span>
-      </div>
-      <div className="study-canvas" ref={host} />
-      {status !== "ready" && (
-        <div className="study-fallback">
-          <div className="fallback-pavilion">
-            <div />
-            <div />
-            <div />
+    <div
+      className={`light-experience mode-${mode}`}
+      ref={root}
+      data-camera-owner={!motion ? "static" : scrollReady && following ? "scroll" : "visitor"}
+    >
+      <div className="study-journey" ref={track} data-scroll={scrollReady}>
+        <div className="study-stage" ref={panel}>
+          <div className="study-journey-toolbar">
+            <p>
+              {status !== "ready"
+                ? "Light pavilion"
+                : scrollReady && following
+                  ? "Scroll to move through the pavilion"
+                  : "Choose a view, then make it yours"}
+            </p>
+            <div>
+              {scrollReady && (
+                <button
+                  type="button"
+                  onClick={toggleCamera}
+                  data-state={following ? "following" : "paused"}
+                >
+                  {following ? "Pause camera" : "Resume scroll"}
+                </button>
+              )}
+              <button type="button" onClick={skipJourney}>
+                Material controls <Icon name="down" />
+              </button>
+            </div>
           </div>
-          <p>{status === "loading" ? "Finding the light…" : "A quiet study in proportion."}</p>
-          <span>
-            {status === "loading"
-              ? "Preparing your pavilion"
-              : "The interactive pavilion needs WebGL. Explore the material notes below."}
-          </span>
+          <div className="study-viewport">
+            <div className="study-canvas" ref={host} />
+            <div className="study-meta">
+              <span className="meta-label">Interactive section</span>
+              <span className="meta-label">
+                {mode === "daylight" ? "11:00 / Sunlit" : "18:30 / Afterglow"}
+              </span>
+            </div>
+            {status !== "ready" && (
+              <div className="study-fallback">
+                <div className="fallback-pavilion">
+                  <div />
+                  <div />
+                  <div />
+                </div>
+                <p>
+                  {status === "loading" ? "Finding the light…" : "A quiet study in proportion."}
+                </p>
+                <span>
+                  {status === "loading"
+                    ? "Preparing your pavilion"
+                    : "The interactive pavilion needs WebGL. Explore the material notes below."}
+                </span>
+              </div>
+            )}
+          </div>
+          <div className="study-journey-caption" id="aurel-light-caption">
+            {lightChapters.map((item, index) => (
+              <div
+                className="study-journey-copy"
+                key={item.id}
+                data-chapter={item.id}
+                aria-hidden={chapter !== index}
+                inert={chapter !== index}
+              >
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </div>
+            ))}
+          </div>
+          <fieldset className="study-chapters" aria-label="Pavilion camera views">
+            {lightChapters.map((item, index) => (
+              <button
+                type="button"
+                key={item.id}
+                aria-pressed={chapter === index}
+                aria-controls="aurel-light-caption"
+                disabled={status !== "ready"}
+                onClick={() => jumpToChapter(index)}
+              >
+                {item.label}
+              </button>
+            ))}
+            <div className="study-journey-progress" aria-hidden="true">
+              <span ref={progressFill} />
+            </div>
+          </fieldset>
+          <p className="sr-only" aria-live="polite">
+            {announcement}
+          </p>
         </div>
-      )}
+      </div>
       <div className="study-caption">
         <p>
-          <span className="tiny-cross">+</span>{" "}
           {mode === "daylight"
             ? "Long shadows. Open possibilities."
             : "The moment a space becomes a sanctuary."}
         </p>
         <div className="view-controls">
           <button
-            disabled={view <= -2 || status !== "ready"}
+            disabled={status !== "ready"}
+            aria-disabled={view <= -2 || undefined}
             type="button"
             aria-label="View pavilion from further left"
-            onClick={() => setView((v) => v - 1)}
+            onClick={() => {
+              if (view <= -2) return;
+              takeControl(true);
+              setView((v) => v - 1);
+            }}
           >
-            ←
+            <Icon name="left" />
           </button>
-          <span className="eyebrow">Change perspective</span>
+          <span className="meta-label">Change perspective</span>
           <button
-            disabled={view >= 2 || status !== "ready"}
+            disabled={status !== "ready"}
+            aria-disabled={view >= 2 || undefined}
             type="button"
             aria-label="View pavilion from further right"
-            onClick={() => setView((v) => v + 1)}
+            onClick={() => {
+              if (view >= 2) return;
+              takeControl(true);
+              setView((v) => v + 1);
+            }}
           >
-            →
+            <Icon name="right" />
           </button>
         </div>
       </div>
-      <div className="study-controls">
+      <div className="study-controls" ref={controls}>
         <div>
-          <p className="eyebrow">01 / The hour</p>
+          <p className="meta-label">The hour</p>
           <div className="segmented">
             {(["daylight", "dusk"] as const).map((value) => (
               <button
                 type="button"
                 key={value}
                 aria-pressed={mode === value}
-                onClick={() => setMode(value)}
+                onClick={() => {
+                  takeControl();
+                  setMode(value);
+                }}
               >
-                <span aria-hidden="true">{value === "daylight" ? "☼" : "◐"}</span>
+                <Icon name={value === "daylight" ? "sun" : "moon"} />
                 {value === "daylight" ? "Daylight" : "Dusk"}
               </button>
             ))}
           </div>
         </div>
         <div>
-          <p className="eyebrow">02 / The surface</p>
+          <p className="meta-label">The surface</p>
           <div className="segmented">
             {(["limestone", "basalt"] as const).map((value) => (
               <button
                 type="button"
                 key={value}
                 aria-pressed={finish === value}
-                onClick={() => setFinish(value)}
+                onClick={() => {
+                  takeControl();
+                  setFinish(value);
+                }}
               >
                 <span className={`finish-swatch ${value}`} />
                 {value === "limestone" ? "Limestone" : "Basalt"}
