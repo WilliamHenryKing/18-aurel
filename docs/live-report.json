@@ -1,6 +1,6 @@
 {
   "base": "https://18-aurel.williamking.workers.dev",
-  "checkedAt": "2026-10-03T15:13:00.653Z",
+  "checkedAt": "2026-10-05T10:38:10.849Z",
   "files": [
     {
       "path": "/404.html",
@@ -9,22 +9,22 @@
       "bytes": 344
     },
     {
-      "path": "/assets/index-B7_d4WSP.css",
+      "path": "/assets/index-CXVmuXDr.js",
       "status": 200,
       "matched": true,
-      "bytes": 41158
+      "bytes": 360300
     },
     {
-      "path": "/assets/index-oc1M73_x.js",
+      "path": "/assets/index-DRXUNsp8.css",
       "status": 200,
       "matched": true,
-      "bytes": 359678
+      "bytes": 54025
     },
     {
-      "path": "/assets/LightStudy-DR9ATTkL.js",
+      "path": "/assets/LightStudy-aVCN0Mu7.js",
       "status": 200,
       "matched": true,
-      "bytes": 549112
+      "bytes": 564295
     },
     {
       "path": "/favicon.svg",
@@ -79,6 +79,30 @@
       "status": 200,
       "matched": true,
       "bytes": 223802
+    },
+    {
+      "path": "/images/aurel-timber-study-mobile.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 36476
+    },
+    {
+      "path": "/images/aurel-timber-study.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 219232
+    },
+    {
+      "path": "/images/aurel-world-mobile.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 58610
+    },
+    {
+      "path": "/images/aurel-world.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 460308
     },
     {
       "path": "/images/joinery-detail-mobile.webp",
@@ -151,8 +175,8 @@
   "notFoundStatus": 404,
   "release": {
     "project": "18-aurel",
-    "sourceCommit": "53ca7560e4b9d94c66efe3f3cf6b055e8ddf06b5",
-    "builtAt": "2026-10-03T15:11:02.493Z"
+    "sourceCommit": "3a6dc8305307d284cac2d72d091430663c644938",
+    "builtAt": "2026-10-05T10:28:18.807Z"
   },
   "desktop": {
     "title": "Space, deeply felt. — AUREL",
@@ -164,14 +188,14 @@
         "transfer": 63940
       },
       {
-        "name": "/assets/index-oc1M73_x.js",
-        "encoded": 124649,
-        "transfer": 124949
+        "name": "/assets/index-CXVmuXDr.js",
+        "encoded": 124995,
+        "transfer": 125295
       },
       {
-        "name": "/assets/index-B7_d4WSP.css",
-        "encoded": 10619,
-        "transfer": 10919
+        "name": "/assets/index-DRXUNsp8.css",
+        "encoded": 12984,
+        "transfer": 13284
       },
       {
         "name": "/fonts/manrope-latin.woff2",
@@ -182,11 +206,6 @@
         "name": "/fonts/cormorant-italic.woff2",
         "encoded": 65232,
         "transfer": 65532
-      },
-      {
-        "name": "/assets/LightStudy-DR9ATTkL.js",
-        "encoded": 142405,
-        "transfer": 142705
       },
       {
         "name": "/images/aurel-hero.webp",
@@ -207,11 +226,11 @@
     "paint": [
       {
         "name": "first-paint",
-        "startTime": 432
+        "startTime": 220
       },
       {
         "name": "first-contentful-paint",
-        "startTime": 596
+        "startTime": 332
       }
     ]
   },
@@ -225,14 +244,14 @@
         "transfer": 63940
       },
       {
-        "name": "/assets/index-oc1M73_x.js",
-        "encoded": 124649,
-        "transfer": 124949
+        "name": "/assets/index-CXVmuXDr.js",
+        "encoded": 124937,
+        "transfer": 125237
       },
       {
-        "name": "/assets/index-B7_d4WSP.css",
-        "encoded": 10619,
-        "transfer": 10919
+        "name": "/assets/index-DRXUNsp8.css",
+        "encoded": 12984,
+        "transfer": 13284
       },
       {
         "name": "/fonts/manrope-latin.woff2",
@@ -243,11 +262,6 @@
         "name": "/fonts/cormorant-italic.woff2",
         "encoded": 65232,
         "transfer": 65532
-      },
-      {
-        "name": "/assets/LightStudy-DR9ATTkL.js",
-        "encoded": 142432,
-        "transfer": 142732
       },
       {
         "name": "/images/aurel-hero.webp",
@@ -273,11 +287,11 @@
     "paint": [
       {
         "name": "first-paint",
-        "startTime": 432
+        "startTime": 180
       },
       {
         "name": "first-contentful-paint",
-        "startTime": 584
+        "startTime": 264
       }
     ]
   }

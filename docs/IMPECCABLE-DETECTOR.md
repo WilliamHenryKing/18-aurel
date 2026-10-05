@@ -9,3 +9,7 @@ Two warnings identify thick side borders on `.fallback-pavilion`. These draw the
 The camera, scrolling and accessibility corrections changed `src/LightStudy.tsx`, `src/App.tsx` and `src/styles.css`, which justified one more manual scan. Impeccable `context` reported `SCOPED_EXISTING_ALLOWED`. `impeccable detect --json src` returned the same two `side-tab` warnings on `.fallback-pavilion` and nothing else; `impeccable-detect.json` now holds this output. The functional exception above still applies.
 
 The scan is mechanical evidence only. It does not certify visual quality, responsive behavior, keyboard access or acceptance; those need the separate browser receipts.
+
+## Third pass — 5 October 2026
+
+The release review changed `src/App.tsx` (the gallery caption reveal). One more manual scan of the released source returned the same two `side-tab` warnings on `.fallback-pavilion` (`styles.css` lines 715–716) and nothing else; `impeccable-detect.json` now holds this output. The functional exception above still applies.

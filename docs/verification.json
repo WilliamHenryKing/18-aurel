@@ -1,7 +1,7 @@
 {
   "slug": "18-aurel",
   "base": "http://127.0.0.1:4628",
-  "date": "2026-10-03T14:46:35.549Z",
+  "date": "2026-10-05T10:28:26.404Z",
   "checks": [
     {
       "name": "1440 #/ no overflow",
@@ -298,6 +298,14 @@
       "pass": true
     },
     {
+      "name": "Daylight mode changes",
+      "pass": true
+    },
+    {
+      "name": "Basalt finish changes",
+      "pass": true
+    },
+    {
       "name": "Unknown hash route is handled",
       "pass": true
     },
@@ -313,7 +321,9 @@
       "width": 1440,
       "route": "#/",
       "title": "Space, deeply felt. — AUREL",
-      "headings": ["Space, deeply felt."],
+      "headings": [
+        "Space, deeply felt."
+      ],
       "broken": [],
       "overflow": false
     },
@@ -321,7 +331,9 @@
       "width": 1440,
       "route": "#/projects",
       "title": "Selected studies — AUREL",
-      "headings": ["Considered spaces.Lasting impressions."],
+      "headings": [
+        "Considered spaces.Lasting impressions."
+      ],
       "broken": [],
       "overflow": false
     },
@@ -329,7 +341,9 @@
       "width": 1440,
       "route": "#/studio",
       "title": "The studio — AUREL",
-      "headings": ["Less noise.More meaning."],
+      "headings": [
+        "Less noise.More meaning."
+      ],
       "broken": [],
       "overflow": false
     },
@@ -337,7 +351,9 @@
       "width": 1440,
       "route": "#/enquiry",
       "title": "A first thought — AUREL",
-      "headings": ["Begin witha feeling."],
+      "headings": [
+        "Begin witha feeling."
+      ],
       "broken": [],
       "overflow": false
     },
@@ -345,7 +361,9 @@
       "width": 1440,
       "route": "#/light",
       "title": "Space, deeply felt. — AUREL",
-      "headings": ["Space, deeply felt."],
+      "headings": [
+        "Space, deeply felt."
+      ],
       "broken": [],
       "overflow": false
     },
@@ -353,7 +371,9 @@
       "width": 1440,
       "route": "#/projects/dune-house",
       "title": "Dune House — AUREL",
-      "headings": ["Dune House"],
+      "headings": [
+        "Dune House"
+      ],
       "broken": [],
       "overflow": false
     },
@@ -361,7 +381,9 @@
       "width": 1440,
       "route": "#/projects/quiet-gallery",
       "title": "The Quiet Gallery — AUREL",
-      "headings": ["The Quiet Gallery"],
+      "headings": [
+        "The Quiet Gallery"
+      ],
       "broken": [],
       "overflow": false
     },
@@ -369,7 +391,9 @@
       "width": 1440,
       "route": "#/projects/walnut-room",
       "title": "The Walnut Room — AUREL",
-      "headings": ["The Walnut Room"],
+      "headings": [
+        "The Walnut Room"
+      ],
       "broken": [],
       "overflow": false
     },
@@ -377,7 +401,9 @@
       "width": 1440,
       "route": "#/projects/inner-sanctuary",
       "title": "Inner Sanctuary — AUREL",
-      "headings": ["Inner Sanctuary"],
+      "headings": [
+        "Inner Sanctuary"
+      ],
       "broken": [],
       "overflow": false
     },
@@ -385,7 +411,9 @@
       "width": 390,
       "route": "#/",
       "title": "Space, deeply felt. — AUREL",
-      "headings": ["Space, deeply felt."],
+      "headings": [
+        "Space, deeply felt."
+      ],
       "broken": [],
       "overflow": false
     },
@@ -393,7 +421,9 @@
       "width": 390,
       "route": "#/projects",
       "title": "Selected studies — AUREL",
-      "headings": ["Considered spaces.Lasting impressions."],
+      "headings": [
+        "Considered spaces.Lasting impressions."
+      ],
       "broken": [],
       "overflow": false
     },
@@ -401,7 +431,9 @@
       "width": 390,
       "route": "#/studio",
       "title": "The studio — AUREL",
-      "headings": ["Less noise.More meaning."],
+      "headings": [
+        "Less noise.More meaning."
+      ],
       "broken": [],
       "overflow": false
     },
@@ -409,7 +441,9 @@
       "width": 390,
       "route": "#/enquiry",
       "title": "A first thought — AUREL",
-      "headings": ["Begin witha feeling."],
+      "headings": [
+        "Begin witha feeling."
+      ],
       "broken": [],
       "overflow": false
     },
@@ -417,7 +451,9 @@
       "width": 390,
       "route": "#/light",
       "title": "Space, deeply felt. — AUREL",
-      "headings": ["Space, deeply felt."],
+      "headings": [
+        "Space, deeply felt."
+      ],
       "broken": [],
       "overflow": false
     },
@@ -425,7 +461,9 @@
       "width": 390,
       "route": "#/projects/dune-house",
       "title": "Dune House — AUREL",
-      "headings": ["Dune House"],
+      "headings": [
+        "Dune House"
+      ],
       "broken": [],
       "overflow": false
     },
@@ -433,7 +471,9 @@
       "width": 390,
       "route": "#/projects/quiet-gallery",
       "title": "The Quiet Gallery — AUREL",
-      "headings": ["The Quiet Gallery"],
+      "headings": [
+        "The Quiet Gallery"
+      ],
       "broken": [],
       "overflow": false
     },
@@ -441,7 +481,9 @@
       "width": 390,
       "route": "#/projects/walnut-room",
       "title": "The Walnut Room — AUREL",
-      "headings": ["The Walnut Room"],
+      "headings": [
+        "The Walnut Room"
+      ],
       "broken": [],
       "overflow": false
     },
@@ -449,7 +491,9 @@
       "width": 390,
       "route": "#/projects/inner-sanctuary",
       "title": "Inner Sanctuary — AUREL",
-      "headings": ["Inner Sanctuary"],
+      "headings": [
+        "Inner Sanctuary"
+      ],
       "broken": [],
       "overflow": false
     }
@@ -487,31 +531,69 @@
   "diagnostics": [
     {
       "status": "ready",
-      "frames": 65,
+      "frames": 193,
       "visible": true,
       "motion": true,
-      "mode": "dusk",
-      "finish": "limestone",
+      "mode": "daylight",
+      "finish": "basalt",
       "drawCalls": 100,
       "triangles": 3104,
       "dpr": 1,
       "geometries": 51,
       "textures": 5,
-      "disposed": false
+      "disposed": false,
+      "cameraOwner": "visitor",
+      "journeyProgress": 0,
+      "scrollProgress": 1,
+      "chapter": "threshold",
+      "camera": [
+        11.601473631908492,
+        6.2,
+        14.52947474743037
+      ],
+      "target": [
+        0,
+        0.85,
+        0
+      ],
+      "scrollTriggerActive": false,
+      "journeyEnabled": true,
+      "scrollStart": 3398,
+      "scrollEnd": 4433,
+      "renderPending": false
     },
     {
       "status": "ready",
-      "frames": 65,
+      "frames": 193,
       "visible": false,
       "motion": true,
-      "mode": "dusk",
-      "finish": "limestone",
+      "mode": "daylight",
+      "finish": "basalt",
       "drawCalls": 100,
       "triangles": 3104,
       "dpr": 1,
       "geometries": 51,
       "textures": 5,
-      "disposed": false
+      "disposed": false,
+      "cameraOwner": "visitor",
+      "journeyProgress": 0,
+      "scrollProgress": 1,
+      "chapter": "threshold",
+      "camera": [
+        11.601473631908492,
+        6.2,
+        14.52947474743037
+      ],
+      "target": [
+        0,
+        0.85,
+        0
+      ],
+      "scrollTriggerActive": false,
+      "journeyEnabled": true,
+      "scrollStart": 3398,
+      "scrollEnd": 4433,
+      "renderPending": false
     }
   ],
   "browser": "154.0.8037.97",

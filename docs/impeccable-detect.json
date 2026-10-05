@@ -8,7 +8,9 @@
     "file": "C:\\Users\\William King\\Documents\\Money Making Project\\experiences\\18-aurel\\src\\styles.css",
     "line": 715,
     "snippet": "border-left: 10px solid #9c886b",
-    "importedBy": ["main.tsx"]
+    "importedBy": [
+      "main.tsx"
+    ]
   },
   {
     "antipattern": "side-tab",
@@ -19,6 +21,8 @@
     "file": "C:\\Users\\William King\\Documents\\Money Making Project\\experiences\\18-aurel\\src\\styles.css",
     "line": 716,
     "snippet": "border-right: 8px solid #655a46",
-    "importedBy": ["main.tsx"]
+    "importedBy": [
+      "main.tsx"
+    ]
   }
 ]

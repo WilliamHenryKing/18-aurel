@@ -56,3 +56,12 @@ A fresh root agent resumed this work from the cold handover. Read-only reviews o
 - **Accessibility and resilience.** Material controls receive focus even if the scroll is interrupted. The perspective arrows use `aria-disabled` at their limits so focus is not dropped. Chapter jumps are announced politely. Pause/Resume uses its changing label without a contradictory `aria-pressed`. The footer motion switch keeps one accessible name with `aria-pressed`. Explanatory notes meet the 16px prose floor. A failed late chunk shows the placeholder, and a restored WebGL context rebuilds its reflection map.
 
 Interim probes recorded exact chapter landings, skip focus, compositions at 1920×1080, 1440×900, 1366×657 and 390×844, and no page or console errors. They predate the final renders and build; they are not release QA. The detector second pass is recorded in [IMPECCABLE-DETECTOR.md](IMPECCABLE-DETECTOR.md).
+
+## Final renders and release review — 5 October 2026
+
+The final 3200 × 2000 CUDA masters are delivered to the render gallery as responsive WebPs (`aurel-world`, `aurel-timber-study`); the packed source, reconstruction tools and render evidence are described in [RENDERING.md](RENDERING.md). Release QA ran against the final production build in installed Chrome on the GPU, and the sampled gallery and camera screenshots were reviewed at 1440 and 390px.
+
+- **The gallery caption waited at 35% opacity.** The material sequence faded the caption and its two view buttons up from 35% once the visitor reached the gallery, so until then they measured 2.83:1 in axe while remaining focusable. The caption now rises into place instead, holding full contrast in every state.
+- **Harness timing, not product behaviour.** The root refinement harness measured the direct light route, and gallery focus after a route change, before the route's deferred scroll and focus hand-off had run (about 30ms after render). In a running page the route always settled on the study. The harness now waits, bounded, for the settled state; its assertions are unchanged.
+
+Final receipts: 73 browser, 52 refinement and 33 camera checks against the build recorded in [RELEASE.md](RELEASE.md). The third detector pass is in [IMPECCABLE-DETECTOR.md](IMPECCABLE-DETECTOR.md).

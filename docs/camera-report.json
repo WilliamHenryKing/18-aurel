@@ -1,0 +1,1686 @@
+{
+  "slug": "18-aurel",
+  "base": "http://127.0.0.1:4628",
+  "date": "2026-10-05T10:29:37.473Z",
+  "checks": [
+    {
+      "name": "1440x900 chapter0 valid camera",
+      "pass": true,
+      "detail": {
+        "status": "ready",
+        "frames": 96,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 100,
+        "triangles": 3104,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "scroll",
+        "journeyProgress": 0,
+        "scrollProgress": 0,
+        "chapter": "threshold",
+        "camera": [
+          9.3,
+          6.2,
+          16.1
+        ],
+        "target": [
+          0,
+          0.85,
+          0
+        ],
+        "scrollTriggerActive": false,
+        "journeyEnabled": true,
+        "scrollStart": 3398,
+        "scrollEnd": 4433,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "1440x900 chapter1 valid camera",
+      "pass": true,
+      "detail": {
+        "status": "ready",
+        "frames": 273,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 100,
+        "triangles": 3104,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "scroll",
+        "journeyProgress": 0.499999,
+        "scrollProgress": 0.499999,
+        "chapter": "timber",
+        "camera": [
+          4.300013095605762,
+          2.6500021700167498,
+          7.700006087819533
+        ],
+        "target": [
+          1.4500002985140494,
+          1.200000093648312,
+          -0.5999992052521513
+        ],
+        "scrollTriggerActive": true,
+        "journeyEnabled": true,
+        "scrollStart": 3398,
+        "scrollEnd": 4433,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "1440x900 chapter2 valid camera",
+      "pass": true,
+      "detail": {
+        "status": "ready",
+        "frames": 449,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 99,
+        "triangles": 3092,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "scroll",
+        "journeyProgress": 0.999999,
+        "scrollProgress": 0.999999,
+        "chapter": "water",
+        "camera": [
+          -3.799983973254414,
+          2.8999991986570937,
+          8.599997996650991
+        ],
+        "target": [
+          -2.399992387293007,
+          0.7000004006598664,
+          -0.2500004006648211
+        ],
+        "scrollTriggerActive": true,
+        "journeyEnabled": true,
+        "scrollStart": 3398,
+        "scrollEnd": 4433,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "1440x900 distinct chapter positions",
+      "pass": true,
+      "detail": [
+        [
+          9.3,
+          6.2,
+          16.1
+        ],
+        [
+          4.300013095605762,
+          2.6500021700167498,
+          7.700006087819533
+        ],
+        [
+          -3.799983973254414,
+          2.8999991986570937,
+          8.599997996650991
+        ]
+      ]
+    },
+    {
+      "name": "1440x900 native scroll changes camera",
+      "pass": true,
+      "detail": [
+        {
+          "status": "ready",
+          "frames": 531,
+          "visible": true,
+          "motion": true,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "scroll",
+          "journeyProgress": 0.025081,
+          "scrollProgress": 0.025081,
+          "chapter": "threshold",
+          "camera": [
+            9.029164442693167,
+            5.954056441206145,
+            15.604564262753282
+          ],
+          "target": [
+            0.09154958202723824,
+            0.8757354140684208,
+            -0.018739267188382334
+          ],
+          "scrollTriggerActive": true,
+          "journeyEnabled": true,
+          "scrollStart": 3398,
+          "scrollEnd": 4433,
+          "renderPending": false
+        },
+        {
+          "status": "ready",
+          "frames": 613,
+          "visible": true,
+          "motion": true,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "scroll",
+          "journeyProgress": 0.5,
+          "scrollProgress": 0.5,
+          "chapter": "timber",
+          "camera": [
+            4.300000292233496,
+            2.650000127749242,
+            7.700000352710452
+          ],
+          "target": [
+            1.4499999521538063,
+            1.199999990435599,
+            -0.5999999637904961
+          ],
+          "scrollTriggerActive": true,
+          "journeyEnabled": true,
+          "scrollStart": 3398,
+          "scrollEnd": 4433,
+          "renderPending": false
+        },
+        {
+          "status": "ready",
+          "frames": 695,
+          "visible": true,
+          "motion": true,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 99,
+          "triangles": 3092,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "scroll",
+          "journeyProgress": 1,
+          "scrollProgress": 1,
+          "chapter": "water",
+          "camera": [
+            -3.7999991637966772,
+            2.8999999593753776,
+            8.599999892970269
+          ],
+          "target": [
+            -2.3999995990642193,
+            0.7000000265677766,
+            -0.2500000246938034
+          ],
+          "scrollTriggerActive": true,
+          "journeyEnabled": true,
+          "scrollStart": 3398,
+          "scrollEnd": 4433,
+          "renderPending": false
+        }
+      ]
+    },
+    {
+      "name": "1440x900 bounded timing sample collected",
+      "pass": true,
+      "detail": {
+        "durationMs": 5000.299999988079,
+        "samples": 647,
+        "medianMs": 7.799999999999272,
+        "p95Ms": 8.299999999999272,
+        "maxMs": 9.100000000000364,
+        "gapsAbove50ms": 0
+      }
+    },
+    {
+      "name": "1440x900 manual view takes camera ownership",
+      "pass": true,
+      "detail": {
+        "status": "ready",
+        "frames": 1461,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 100,
+        "triangles": 3104,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "visitor",
+        "journeyProgress": 1,
+        "scrollProgress": 1,
+        "chapter": "water",
+        "camera": [
+          -5.106777838732292,
+          2.8999999999999977,
+          8.291417536043305
+        ],
+        "target": [
+          -2.3999999999999986,
+          0.6999999999999997,
+          -0.2500000000000002
+        ],
+        "scrollTriggerActive": false,
+        "journeyEnabled": true,
+        "scrollStart": 3398,
+        "scrollEnd": 4433,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "1440x900 manual view is not overwritten by scroll",
+      "pass": true,
+      "detail": {
+        "before": {
+          "status": "ready",
+          "frames": 1461,
+          "visible": true,
+          "motion": true,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "visitor",
+          "journeyProgress": 1,
+          "scrollProgress": 1,
+          "chapter": "water",
+          "camera": [
+            -5.106777838732292,
+            2.8999999999999977,
+            8.291417536043305
+          ],
+          "target": [
+            -2.3999999999999986,
+            0.6999999999999997,
+            -0.2500000000000002
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": true,
+          "scrollStart": 3398,
+          "scrollEnd": 4433,
+          "renderPending": false
+        },
+        "after": {
+          "status": "ready",
+          "frames": 1461,
+          "visible": true,
+          "motion": true,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "visitor",
+          "journeyProgress": 1,
+          "scrollProgress": 1,
+          "chapter": "water",
+          "camera": [
+            -5.106777838732292,
+            2.8999999999999977,
+            8.291417536043305
+          ],
+          "target": [
+            -2.3999999999999986,
+            0.6999999999999997,
+            -0.2500000000000002
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": true,
+          "scrollStart": 3398,
+          "scrollEnd": 4433,
+          "renderPending": false
+        }
+      }
+    },
+    {
+      "name": "1440x900 motion-off static camera",
+      "pass": true,
+      "detail": {
+        "before": {
+          "status": "ready",
+          "frames": 1463,
+          "visible": true,
+          "motion": false,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "static",
+          "journeyProgress": 1,
+          "scrollProgress": 1,
+          "chapter": "water",
+          "camera": [
+            -5.10680698150181,
+            2.8999999999999986,
+            8.291410654270935
+          ],
+          "target": [
+            -2.3999999999999995,
+            0.6999999999999995,
+            -0.2500000000000001
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": false,
+          "scrollStart": 3398,
+          "scrollEnd": 4433,
+          "renderPending": false
+        },
+        "after": {
+          "status": "ready",
+          "frames": 1463,
+          "visible": true,
+          "motion": false,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "static",
+          "journeyProgress": 1,
+          "scrollProgress": 1,
+          "chapter": "water",
+          "camera": [
+            -5.10680698150181,
+            2.8999999999999986,
+            8.291410654270935
+          ],
+          "target": [
+            -2.3999999999999995,
+            0.6999999999999995,
+            -0.2500000000000001
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": false,
+          "scrollStart": 3398,
+          "scrollEnd": 4433,
+          "renderPending": false
+        }
+      }
+    },
+    {
+      "name": "1440x900 manual pose survives scrolling",
+      "pass": true,
+      "detail": {
+        "before": {
+          "status": "ready",
+          "frames": 1464,
+          "visible": true,
+          "motion": false,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "static",
+          "journeyProgress": 0.5,
+          "scrollProgress": 1,
+          "chapter": "timber",
+          "camera": [
+            4.299999999999999,
+            2.65,
+            7.700000000000001
+          ],
+          "target": [
+            1.4500000000000002,
+            1.2,
+            -0.6
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": false,
+          "scrollStart": 3398,
+          "scrollEnd": 4433,
+          "renderPending": false
+        },
+        "after": {
+          "status": "ready",
+          "frames": 1464,
+          "visible": true,
+          "motion": false,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "static",
+          "journeyProgress": 0.5,
+          "scrollProgress": 1,
+          "chapter": "timber",
+          "camera": [
+            4.299999999999999,
+            2.65,
+            7.700000000000001
+          ],
+          "target": [
+            1.4500000000000002,
+            1.2,
+            -0.6
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": false,
+          "scrollStart": 3398,
+          "scrollEnd": 4433,
+          "renderPending": false
+        }
+      }
+    },
+    {
+      "name": "1440x900 static ownership diagnosed",
+      "pass": true,
+      "detail": {
+        "status": "ready",
+        "frames": 1464,
+        "visible": true,
+        "motion": false,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 100,
+        "triangles": 3104,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "static",
+        "journeyProgress": 0.5,
+        "scrollProgress": 1,
+        "chapter": "timber",
+        "camera": [
+          4.299999999999999,
+          2.65,
+          7.700000000000001
+        ],
+        "target": [
+          1.4500000000000002,
+          1.2,
+          -0.6
+        ],
+        "scrollTriggerActive": false,
+        "journeyEnabled": false,
+        "scrollStart": 3398,
+        "scrollEnd": 4433,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "1440x900 keyboard skip focuses its destination",
+      "pass": true,
+      "detail": {
+        "tag": "BUTTON",
+        "class": "",
+        "text": "Daylight"
+      }
+    },
+    {
+      "name": "1440x900 route removes canvas",
+      "pass": true
+    },
+    {
+      "name": "1440x900 scene disposal diagnosed",
+      "pass": true,
+      "detail": {
+        "status": "disposed",
+        "frames": 1465,
+        "visible": false,
+        "motion": false,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 100,
+        "triangles": 3104,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": true,
+        "cameraOwner": "static",
+        "journeyProgress": 0.5,
+        "scrollProgress": 1,
+        "chapter": "timber",
+        "camera": [
+          4.3,
+          2.65,
+          7.700000000000001
+        ],
+        "target": [
+          1.45,
+          1.2,
+          -0.6
+        ],
+        "scrollTriggerActive": false,
+        "journeyEnabled": false,
+        "scrollStart": 3398,
+        "scrollEnd": 4433,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "1440x900 journey trigger inactive after route cleanup",
+      "pass": true,
+      "detail": {
+        "status": "disposed",
+        "frames": 1465,
+        "visible": false,
+        "motion": false,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 100,
+        "triangles": 3104,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": true,
+        "cameraOwner": "static",
+        "journeyProgress": 0.5,
+        "scrollProgress": 1,
+        "chapter": "timber",
+        "camera": [
+          4.3,
+          2.65,
+          7.700000000000001
+        ],
+        "target": [
+          1.45,
+          1.2,
+          -0.6
+        ],
+        "scrollTriggerActive": false,
+        "journeyEnabled": false,
+        "scrollStart": 3398,
+        "scrollEnd": 4433,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "1440x900 system reduced motion static",
+      "pass": true,
+      "detail": {
+        "before": {
+          "status": "ready",
+          "frames": 1,
+          "visible": true,
+          "motion": false,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "static",
+          "journeyProgress": 0,
+          "scrollProgress": 0,
+          "chapter": "threshold",
+          "camera": [
+            9.3,
+            6.2,
+            16.1
+          ],
+          "target": [
+            0,
+            0.85,
+            0
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": false,
+          "scrollStart": 0,
+          "scrollEnd": 0,
+          "renderPending": false
+        },
+        "after": {
+          "status": "ready",
+          "frames": 1,
+          "visible": true,
+          "motion": false,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "static",
+          "journeyProgress": 0,
+          "scrollProgress": 0,
+          "chapter": "threshold",
+          "camera": [
+            9.3,
+            6.2,
+            16.1
+          ],
+          "target": [
+            0,
+            0.85,
+            0
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": false,
+          "scrollStart": 0,
+          "scrollEnd": 0,
+          "renderPending": false
+        }
+      }
+    },
+    {
+      "name": "390x844 chapter0 valid camera",
+      "pass": true,
+      "detail": {
+        "status": "ready",
+        "frames": 96,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 100,
+        "triangles": 3104,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "scroll",
+        "journeyProgress": 0,
+        "scrollProgress": 0,
+        "chapter": "threshold",
+        "camera": [
+          11.16,
+          7.2700000000000005,
+          19.32
+        ],
+        "target": [
+          0,
+          0.85,
+          0
+        ],
+        "scrollTriggerActive": false,
+        "journeyEnabled": true,
+        "scrollStart": 3078,
+        "scrollEnd": 3821,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "390x844 chapter1 valid camera",
+      "pass": true,
+      "detail": {
+        "status": "ready",
+        "frames": 273,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 90,
+        "triangles": 2984,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "scroll",
+        "journeyProgress": 0.499998,
+        "scrollProgress": 0.499998,
+        "chapter": "timber",
+        "camera": [
+          4.955530431633612,
+          2.9835049282353348,
+          9.60901446196477
+        ],
+        "target": [
+          1.4500005964291038,
+          1.2000001871053232,
+          -0.5999984121861546
+        ],
+        "scrollTriggerActive": true,
+        "journeyEnabled": true,
+        "scrollStart": 3078,
+        "scrollEnd": 3821,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "390x844 chapter2 valid camera",
+      "pass": true,
+      "detail": {
+        "status": "ready",
+        "frames": 453,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 87,
+        "triangles": 2948,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "scroll",
+        "journeyProgress": 1,
+        "scrollProgress": 1,
+        "chapter": "water",
+        "camera": [
+          -4.079999994145293,
+          3.3399999996535086,
+          10.36999999922651
+        ],
+        "target": [
+          -2.399999997481937,
+          0.7000000001297432,
+          -0.2500000001313452
+        ],
+        "scrollTriggerActive": true,
+        "journeyEnabled": true,
+        "scrollStart": 3078,
+        "scrollEnd": 3821,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "390x844 distinct chapter positions",
+      "pass": true,
+      "detail": [
+        [
+          11.16,
+          7.2700000000000005,
+          19.32
+        ],
+        [
+          4.955530431633612,
+          2.9835049282353348,
+          9.60901446196477
+        ],
+        [
+          -4.079999994145293,
+          3.3399999996535086,
+          10.36999999922651
+        ]
+      ]
+    },
+    {
+      "name": "390x844 native scroll changes camera",
+      "pass": true,
+      "detail": [
+        {
+          "status": "ready",
+          "frames": 533,
+          "visible": true,
+          "motion": true,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "scroll",
+          "journeyProgress": 0.024859,
+          "scrollProgress": 0.024859,
+          "chapter": "threshold",
+          "camera": [
+            10.819710881682017,
+            6.972321770536717,
+            18.7336448062491
+          ],
+          "target": [
+            0.0907318153107448,
+            0.8755031925778958,
+            -0.01858421836602501
+          ],
+          "scrollTriggerActive": true,
+          "journeyEnabled": true,
+          "scrollStart": 3078,
+          "scrollEnd": 3821,
+          "renderPending": false
+        },
+        {
+          "status": "ready",
+          "frames": 614,
+          "visible": true,
+          "motion": true,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 90,
+          "triangles": 2984,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "scroll",
+          "journeyProgress": 0.5,
+          "scrollProgress": 0.5,
+          "chapter": "timber",
+          "camera": [
+            4.955500442448273,
+            2.983500188831635,
+            9.609000498912396
+          ],
+          "target": [
+            1.4499999409063886,
+            1.1999999882186319,
+            -0.5999999547328505
+          ],
+          "scrollTriggerActive": true,
+          "journeyEnabled": true,
+          "scrollStart": 3078,
+          "scrollEnd": 3821,
+          "renderPending": false
+        },
+        {
+          "status": "ready",
+          "frames": 696,
+          "visible": true,
+          "motion": true,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 87,
+          "triangles": 2948,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "scroll",
+          "journeyProgress": 1,
+          "scrollProgress": 1,
+          "chapter": "water",
+          "camera": [
+            -4.079999125936062,
+            3.3399999499051116,
+            10.369999887904715
+          ],
+          "target": [
+            -2.3999996213554837,
+            0.7000000253283867,
+            -0.25000002344670724
+          ],
+          "scrollTriggerActive": true,
+          "journeyEnabled": true,
+          "scrollStart": 3078,
+          "scrollEnd": 3821,
+          "renderPending": false
+        }
+      ]
+    },
+    {
+      "name": "390x844 bounded timing sample collected",
+      "pass": true,
+      "detail": {
+        "durationMs": 5006.6,
+        "samples": 638,
+        "medianMs": 8,
+        "p95Ms": 8.200000000000728,
+        "maxMs": 9.100000000000364,
+        "gapsAbove50ms": 0
+      }
+    },
+    {
+      "name": "390x844 manual view takes camera ownership",
+      "pass": true,
+      "detail": {
+        "status": "ready",
+        "frames": 1454,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 87,
+        "triangles": 2948,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "visitor",
+        "journeyProgress": 1,
+        "scrollProgress": 1,
+        "chapter": "water",
+        "camera": [
+          -5.648133406478753,
+          3.339999999999999,
+          9.999701043251969
+        ],
+        "target": [
+          -2.3999999999999986,
+          0.6999999999999997,
+          -0.2500000000000002
+        ],
+        "scrollTriggerActive": false,
+        "journeyEnabled": true,
+        "scrollStart": 3078,
+        "scrollEnd": 3821,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "390x844 manual view is not overwritten by scroll",
+      "pass": true,
+      "detail": {
+        "before": {
+          "status": "ready",
+          "frames": 1454,
+          "visible": true,
+          "motion": true,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 87,
+          "triangles": 2948,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "visitor",
+          "journeyProgress": 1,
+          "scrollProgress": 1,
+          "chapter": "water",
+          "camera": [
+            -5.648133406478753,
+            3.339999999999999,
+            9.999701043251969
+          ],
+          "target": [
+            -2.3999999999999986,
+            0.6999999999999997,
+            -0.2500000000000002
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": true,
+          "scrollStart": 3078,
+          "scrollEnd": 3821,
+          "renderPending": false
+        },
+        "after": {
+          "status": "ready",
+          "frames": 1454,
+          "visible": true,
+          "motion": true,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 87,
+          "triangles": 2948,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "visitor",
+          "journeyProgress": 1,
+          "scrollProgress": 1,
+          "chapter": "water",
+          "camera": [
+            -5.648133406478753,
+            3.339999999999999,
+            9.999701043251969
+          ],
+          "target": [
+            -2.3999999999999986,
+            0.6999999999999997,
+            -0.2500000000000002
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": true,
+          "scrollStart": 3078,
+          "scrollEnd": 3821,
+          "renderPending": false
+        }
+      }
+    },
+    {
+      "name": "390x844 motion-off static camera",
+      "pass": true,
+      "detail": {
+        "before": {
+          "status": "ready",
+          "frames": 1456,
+          "visible": true,
+          "motion": false,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 96,
+          "triangles": 3056,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "static",
+          "journeyProgress": 1,
+          "scrollProgress": 1,
+          "chapter": "water",
+          "camera": [
+            -5.648168377802175,
+            3.34,
+            9.999692785125125
+          ],
+          "target": [
+            -2.3999999999999995,
+            0.6999999999999995,
+            -0.2500000000000001
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": false,
+          "scrollStart": 3078,
+          "scrollEnd": 3821,
+          "renderPending": false
+        },
+        "after": {
+          "status": "ready",
+          "frames": 1456,
+          "visible": true,
+          "motion": false,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 96,
+          "triangles": 3056,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "static",
+          "journeyProgress": 1,
+          "scrollProgress": 1,
+          "chapter": "water",
+          "camera": [
+            -5.648168377802175,
+            3.34,
+            9.999692785125125
+          ],
+          "target": [
+            -2.3999999999999995,
+            0.6999999999999995,
+            -0.2500000000000001
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": false,
+          "scrollStart": 3078,
+          "scrollEnd": 3821,
+          "renderPending": false
+        }
+      }
+    },
+    {
+      "name": "390x844 manual pose survives scrolling",
+      "pass": true,
+      "detail": {
+        "before": {
+          "status": "ready",
+          "frames": 1457,
+          "visible": true,
+          "motion": false,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 97,
+          "triangles": 3068,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "static",
+          "journeyProgress": 0.5,
+          "scrollProgress": 1,
+          "chapter": "timber",
+          "camera": [
+            4.955500000000001,
+            2.9835,
+            9.609000000000002
+          ],
+          "target": [
+            1.4500000000000002,
+            1.2,
+            -0.6
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": false,
+          "scrollStart": 3078,
+          "scrollEnd": 3821,
+          "renderPending": false
+        },
+        "after": {
+          "status": "ready",
+          "frames": 1457,
+          "visible": true,
+          "motion": false,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 97,
+          "triangles": 3068,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "static",
+          "journeyProgress": 0.5,
+          "scrollProgress": 1,
+          "chapter": "timber",
+          "camera": [
+            4.955500000000001,
+            2.9835,
+            9.609000000000002
+          ],
+          "target": [
+            1.4500000000000002,
+            1.2,
+            -0.6
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": false,
+          "scrollStart": 3078,
+          "scrollEnd": 3821,
+          "renderPending": false
+        }
+      }
+    },
+    {
+      "name": "390x844 static ownership diagnosed",
+      "pass": true,
+      "detail": {
+        "status": "ready",
+        "frames": 1457,
+        "visible": true,
+        "motion": false,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 97,
+        "triangles": 3068,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "static",
+        "journeyProgress": 0.5,
+        "scrollProgress": 1,
+        "chapter": "timber",
+        "camera": [
+          4.955500000000001,
+          2.9835,
+          9.609000000000002
+        ],
+        "target": [
+          1.4500000000000002,
+          1.2,
+          -0.6
+        ],
+        "scrollTriggerActive": false,
+        "journeyEnabled": false,
+        "scrollStart": 3078,
+        "scrollEnd": 3821,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "390x844 keyboard skip focuses its destination",
+      "pass": true,
+      "detail": {
+        "tag": "BUTTON",
+        "class": "",
+        "text": "Daylight"
+      }
+    },
+    {
+      "name": "390x844 route removes canvas",
+      "pass": true
+    },
+    {
+      "name": "390x844 scene disposal diagnosed",
+      "pass": true,
+      "detail": {
+        "status": "disposed",
+        "frames": 1458,
+        "visible": false,
+        "motion": false,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 97,
+        "triangles": 3068,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": true,
+        "cameraOwner": "static",
+        "journeyProgress": 0.5,
+        "scrollProgress": 1,
+        "chapter": "timber",
+        "camera": [
+          4.9555,
+          2.9835,
+          9.609000000000002
+        ],
+        "target": [
+          1.45,
+          1.2,
+          -0.6
+        ],
+        "scrollTriggerActive": false,
+        "journeyEnabled": false,
+        "scrollStart": 3078,
+        "scrollEnd": 3821,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "390x844 journey trigger inactive after route cleanup",
+      "pass": true,
+      "detail": {
+        "status": "disposed",
+        "frames": 1458,
+        "visible": false,
+        "motion": false,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 97,
+        "triangles": 3068,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": true,
+        "cameraOwner": "static",
+        "journeyProgress": 0.5,
+        "scrollProgress": 1,
+        "chapter": "timber",
+        "camera": [
+          4.9555,
+          2.9835,
+          9.609000000000002
+        ],
+        "target": [
+          1.45,
+          1.2,
+          -0.6
+        ],
+        "scrollTriggerActive": false,
+        "journeyEnabled": false,
+        "scrollStart": 3078,
+        "scrollEnd": 3821,
+        "renderPending": false
+      }
+    },
+    {
+      "name": "390x844 system reduced motion static",
+      "pass": true,
+      "detail": {
+        "before": {
+          "status": "ready",
+          "frames": 1,
+          "visible": true,
+          "motion": false,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "static",
+          "journeyProgress": 0,
+          "scrollProgress": 0,
+          "chapter": "threshold",
+          "camera": [
+            11.16,
+            7.2700000000000005,
+            19.32
+          ],
+          "target": [
+            0,
+            0.85,
+            0
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": false,
+          "scrollStart": 0,
+          "scrollEnd": 0,
+          "renderPending": false
+        },
+        "after": {
+          "status": "ready",
+          "frames": 1,
+          "visible": true,
+          "motion": false,
+          "mode": "dusk",
+          "finish": "limestone",
+          "drawCalls": 100,
+          "triangles": 3104,
+          "dpr": 1,
+          "geometries": 51,
+          "textures": 5,
+          "disposed": false,
+          "cameraOwner": "static",
+          "journeyProgress": 0,
+          "scrollProgress": 0,
+          "chapter": "threshold",
+          "camera": [
+            11.16,
+            7.2700000000000005,
+            19.32
+          ],
+          "target": [
+            0,
+            0.85,
+            0
+          ],
+          "scrollTriggerActive": false,
+          "journeyEnabled": false,
+          "scrollStart": 0,
+          "scrollEnd": 0,
+          "renderPending": false
+        }
+      }
+    },
+    {
+      "name": "no browser or HTTP errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "captures": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "chapter": 0,
+      "file": "camera-1440x900-chapter-0.png",
+      "diagnostics": {
+        "status": "ready",
+        "frames": 96,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 100,
+        "triangles": 3104,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "scroll",
+        "journeyProgress": 0,
+        "scrollProgress": 0,
+        "chapter": "threshold",
+        "camera": [
+          9.3,
+          6.2,
+          16.1
+        ],
+        "target": [
+          0,
+          0.85,
+          0
+        ],
+        "scrollTriggerActive": false,
+        "journeyEnabled": true,
+        "scrollStart": 3398,
+        "scrollEnd": 4433,
+        "renderPending": false
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "chapter": 1,
+      "file": "camera-1440x900-chapter-1.png",
+      "diagnostics": {
+        "status": "ready",
+        "frames": 273,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 100,
+        "triangles": 3104,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "scroll",
+        "journeyProgress": 0.499999,
+        "scrollProgress": 0.499999,
+        "chapter": "timber",
+        "camera": [
+          4.300013095605762,
+          2.6500021700167498,
+          7.700006087819533
+        ],
+        "target": [
+          1.4500002985140494,
+          1.200000093648312,
+          -0.5999992052521513
+        ],
+        "scrollTriggerActive": true,
+        "journeyEnabled": true,
+        "scrollStart": 3398,
+        "scrollEnd": 4433,
+        "renderPending": false
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "chapter": 2,
+      "file": "camera-1440x900-chapter-2.png",
+      "diagnostics": {
+        "status": "ready",
+        "frames": 449,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 99,
+        "triangles": 3092,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "scroll",
+        "journeyProgress": 0.999999,
+        "scrollProgress": 0.999999,
+        "chapter": "water",
+        "camera": [
+          -3.799983973254414,
+          2.8999991986570937,
+          8.599997996650991
+        ],
+        "target": [
+          -2.399992387293007,
+          0.7000004006598664,
+          -0.2500004006648211
+        ],
+        "scrollTriggerActive": true,
+        "journeyEnabled": true,
+        "scrollStart": 3398,
+        "scrollEnd": 4433,
+        "renderPending": false
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "chapter": 0,
+      "file": "camera-390x844-chapter-0.png",
+      "diagnostics": {
+        "status": "ready",
+        "frames": 96,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 100,
+        "triangles": 3104,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "scroll",
+        "journeyProgress": 0,
+        "scrollProgress": 0,
+        "chapter": "threshold",
+        "camera": [
+          11.16,
+          7.2700000000000005,
+          19.32
+        ],
+        "target": [
+          0,
+          0.85,
+          0
+        ],
+        "scrollTriggerActive": false,
+        "journeyEnabled": true,
+        "scrollStart": 3078,
+        "scrollEnd": 3821,
+        "renderPending": false
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "chapter": 1,
+      "file": "camera-390x844-chapter-1.png",
+      "diagnostics": {
+        "status": "ready",
+        "frames": 273,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 90,
+        "triangles": 2984,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "scroll",
+        "journeyProgress": 0.499998,
+        "scrollProgress": 0.499998,
+        "chapter": "timber",
+        "camera": [
+          4.955530431633612,
+          2.9835049282353348,
+          9.60901446196477
+        ],
+        "target": [
+          1.4500005964291038,
+          1.2000001871053232,
+          -0.5999984121861546
+        ],
+        "scrollTriggerActive": true,
+        "journeyEnabled": true,
+        "scrollStart": 3078,
+        "scrollEnd": 3821,
+        "renderPending": false
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "chapter": 2,
+      "file": "camera-390x844-chapter-2.png",
+      "diagnostics": {
+        "status": "ready",
+        "frames": 453,
+        "visible": true,
+        "motion": true,
+        "mode": "dusk",
+        "finish": "limestone",
+        "drawCalls": 87,
+        "triangles": 2948,
+        "dpr": 1,
+        "geometries": 51,
+        "textures": 5,
+        "disposed": false,
+        "cameraOwner": "scroll",
+        "journeyProgress": 1,
+        "scrollProgress": 1,
+        "chapter": "water",
+        "camera": [
+          -4.079999994145293,
+          3.3399999996535086,
+          10.36999999922651
+        ],
+        "target": [
+          -2.399999997481937,
+          0.7000000001297432,
+          -0.2500000001313452
+        ],
+        "scrollTriggerActive": true,
+        "journeyEnabled": true,
+        "scrollStart": 3078,
+        "scrollEnd": 3821,
+        "renderPending": false
+      }
+    }
+  ],
+  "timing": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "durationMs": 5000.299999988079,
+      "samples": 647,
+      "medianMs": 7.799999999999272,
+      "p95Ms": 8.299999999999272,
+      "maxMs": 9.100000000000364,
+      "gapsAbove50ms": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "durationMs": 5006.6,
+      "samples": 638,
+      "medianMs": 8,
+      "p95Ms": 8.200000000000728,
+      "maxMs": 9.100000000000364,
+      "gapsAbove50ms": 0
+    }
+  ],
+  "limits": "Desktop Chrome emulation and sampled screenshots; no physical-device or universal FPS claim.",
+  "browser": "154.0.8037.97",
+  "passed": true
+}
