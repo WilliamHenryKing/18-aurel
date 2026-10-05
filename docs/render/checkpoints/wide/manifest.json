@@ -1,0 +1,425 @@
+{
+  "schema": 1,
+  "scene": "aurel",
+  "view": "wide",
+  "quality": "final",
+  "sourceFingerprint": "456662b0d7a566f10dfa4c7e54c36c2293afa3e69220a35737e548fb2b991011",
+  "sourceContract": {
+    "schema": 1,
+    "scene": "aurel",
+    "view": "wide",
+    "quality": "final",
+    "settings": {
+      "resolution": [
+        3200,
+        2000
+      ],
+      "samples": 768,
+      "adaptiveThreshold": 0.005,
+      "minimumSamples": 96,
+      "bounces": 14,
+      "compute": "CUDA",
+      "cpuEnabled": false,
+      "denoiser": "OPTIX"
+    },
+    "grid": [
+      4,
+      2
+    ],
+    "overscan": 64,
+    "sources": {
+      "tools/render-checkpointed-worlds.py": "e8e82603a24b31197db3aad94dc13abeb0c846cde1439dea3f584f53ffc7fb2d",
+      "tools/render-architecture-guard.py": "152e8d95bf73403316397d59cec4ded334548bb6aeb07f414bec0b390a9f210a",
+      "tools/render-architecture-region.py": "cbe472508553ccab5a2b5ab31ef633c3955033f506232dbee06a3ef02da4a01f",
+      "tools/render-architecture-world.py": "8c183997407790df322dc43371b72f4bb924017def3787a0bdfb5a55f31d8175",
+      "tools/render-architecture-cuda.py": "4d064dabfc5544990711e0288fb435f0d1ed7c50d4098b08eaf3e216e522e435",
+      "tools/worlds/world_common.py": "8fcc61c2f1febc05770adf2053608844b812a18ed3808754897e50d6054c6552",
+      "tools/worlds/aurel.py": "11825fe35b0026b8a3c92fbb22da68ce2f72a7cefcf00cb69225ff1f23a82179",
+      "tools/worlds/cloth/aurel.json": "a7107f2e10175b988b800e2a5eda7cea65ec813325f16ca1efd5e80aa58465a0",
+      ".workspace/architecture-worlds/textures/manifest.json": "11dc5c1bd8dd2055cc5ba130b028735f40d804c9457ced7d24d4ff2868fbb4c2",
+      ".workspace/architecture-worlds/textures/fine_grained_wood/fine_grained_wood_col_2k.jpg": "d97b1ab2c5206ac43bc0c42f21878da14f4d02497fd21396399406c03f3755a9",
+      ".workspace/architecture-worlds/textures/fine_grained_wood/fine_grained_wood_nor_gl_2k.jpg": "c76fcd29434978227db5a35b5b0238da1bee0fb5fa8cdfc6819a76c7ef723f3c",
+      ".workspace/architecture-worlds/textures/fine_grained_wood/fine_grained_wood_rough_2k.jpg": "7e8f5fc146ae7accd3b9deb2a173c1cf253707ccdee5070ce16cefd4ee68f1b7",
+      ".workspace/architecture-worlds/textures/rosewood_veneer1/rosewood_veneer1_diff_2k.jpg": "4aae1766165d5058ae0311d94d53fb0d5c7cb55d3314916e801b9505cf34ed8e",
+      ".workspace/architecture-worlds/textures/rosewood_veneer1/rosewood_veneer1_nor_gl_2k.jpg": "9ae97e960494ffc5cd948ad89225f694a4624a228418f107bd7145d020dd728d",
+      ".workspace/architecture-worlds/textures/rosewood_veneer1/rosewood_veneer1_rough_2k.jpg": "33e775b991b2f2b4abe0ce61fed193599f336f7dc887847ca58068f92592c7e4",
+      ".workspace/architecture-worlds/textures/marble_01/marble_01_diff_2k.jpg": "d403786171716f86718bdd67eba923d4fb6125c0636bacef0e6a21dd5d623a48",
+      ".workspace/architecture-worlds/textures/marble_01/marble_01_nor_gl_2k.jpg": "d5e17ccb2913adbf28fcb781fddf0aa711259ddea6c1c918442f9a3589aa4660",
+      ".workspace/architecture-worlds/textures/marble_01/marble_01_rough_2k.jpg": "1b970e033856c93ee7390d947da5340e101b489fc8c1463354ea9e6655ce039a",
+      ".workspace/architecture-worlds/textures/plastered_wall/plastered_wall_diff_2k.jpg": "c9f3235d6b28b249dd3c7e6346483f1f6ae11e62b4a81d0397936ff756dfcb1f",
+      ".workspace/architecture-worlds/textures/plastered_wall/plastered_wall_nor_gl_2k.jpg": "de20f536b1ec428c6de32267b317bbf538ecfa5c42398743f1b702a0f8434071",
+      ".workspace/architecture-worlds/textures/plastered_wall/plastered_wall_rough_2k.jpg": "be5c23b7d473bf1dea6d3a39b3e0537d5cf9eb990b4148566d20a35dc0902e54",
+      ".workspace/architecture-worlds/textures/rough_linen/rough_linen_diff_2k.jpg": "e71016e08dfebea1dd4e8a2a675e3b617a889a782af782f1abb795906f4db1b4",
+      ".workspace/architecture-worlds/textures/rough_linen/rough_linen_nor_gl_2k.jpg": "c5733ad50cfe0f90c546f3d4076590c1c78a4fd1a83c967cc9c92dc8175b99e6",
+      ".workspace/architecture-worlds/textures/rough_linen/rough_linen_rough_2k.jpg": "48400d48fa203882bf5d984d5beb2f95edb1550309924601c018f2c4f3f80731",
+      ".workspace/architecture-worlds/textures/concrete_wall_004/concrete_wall_004_diff_2k.jpg": "f0d2060e3ef503a6458ed94c92d059d794be38b56b3a3965e113922a5947ee39",
+      ".workspace/architecture-worlds/textures/concrete_wall_004/concrete_wall_004_nor_gl_2k.jpg": "c8df927b4923dabd7ea243f0bd497713ceefd43b8820ee0c2da05b8951e4ca80",
+      ".workspace/architecture-worlds/textures/concrete_wall_004/concrete_wall_004_rough_2k.jpg": "491ee32fb2a941f627dfd9dc3c5f46da2c3b941a3ba1ac698aa2ea0b0bdec3b6",
+      ".workspace/architecture-worlds/textures/brown_mud_leaves_01/brown_mud_leaves_01_diff_2k.jpg": "29c997d77f56e4ea16d3e998a306be0c17fddb28ab4822657c7cd8249040ffda",
+      ".workspace/architecture-worlds/textures/brown_mud_leaves_01/brown_mud_leaves_01_nor_gl_2k.jpg": "b6ec386e00d9d2a1c3a1da6a98a67066b0dfaa88ddb779341df29700cf081bdf",
+      ".workspace/architecture-worlds/textures/brown_mud_leaves_01/brown_mud_leaves_01_rough_2k.jpg": "9556215f5fef905c37cdf19c77aef7822f124890f8fb7dcce65d57c5eafc0ca5",
+      ".workspace/architecture-worlds/textures/kiara_1_dawn/kiara_1_dawn_2k.hdr": "7261c613b35a9b760ed5c7846ec8182532b90d89f6a8385c42bb743883159a66",
+      ".workspace/architecture-worlds/textures/kloofendal_48d_partly_cloudy/kloofendal_48d_partly_cloudy_2k.hdr": "3fbd33f279f29bd64925c1dd3214fd46c627493d21f1100248b6b1098da4d06e"
+    },
+    "blenderRuntime": {
+      "path": ".workspace/blender-runtime/Blender Foundation/Blender 5.2/blender.exe",
+      "bytes": 113022936,
+      "mtimeNs": 1789436408000000000
+    }
+  },
+  "createdAt": "2026-10-03T19:20:16.912080+00:00",
+  "complete": true,
+  "tiles": {
+    "r1-c1": {
+      "id": "r1-c1",
+      "core": [
+        0,
+        0,
+        800,
+        1000
+      ],
+      "region": [
+        0,
+        0,
+        864,
+        1064
+      ],
+      "dimensions": [
+        864,
+        1064
+      ],
+      "channels": 3,
+      "dtype": "uint16",
+      "sourceBlendSha256": "cb7849e4203d309f8289730651b1be2e8ee2c038deeca587c6d726047c8da61b",
+      "png": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r1-c1.png",
+        "bytes": 4289034,
+        "sha256": "937053d407ddce616e61e19188c98685859d5510c2230daf11300d6f705e6536"
+      },
+      "metadata": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r1-c1.json",
+        "bytes": 979,
+        "sha256": "f8e9a19c2ff580f461e25458001d99ed479f02581c5b26e11d9cc3e3a82c48c9"
+      },
+      "machine": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r1-c1.machine.json",
+        "bytes": 23374,
+        "sha256": "bf0fb77529adb0660635b4a86f98ac5cd37b3fe3520835706c1c91574f7ffd4b"
+      }
+    },
+    "r1-c2": {
+      "id": "r1-c2",
+      "core": [
+        800,
+        0,
+        1600,
+        1000
+      ],
+      "region": [
+        736,
+        0,
+        1664,
+        1064
+      ],
+      "dimensions": [
+        928,
+        1064
+      ],
+      "channels": 3,
+      "dtype": "uint16",
+      "sourceBlendSha256": "cb7849e4203d309f8289730651b1be2e8ee2c038deeca587c6d726047c8da61b",
+      "png": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r1-c2.png",
+        "bytes": 4622717,
+        "sha256": "0217ef5d658ee4475413e2bc8d9ce4ea89b2968888c2763fde8ada06a69c2b39"
+      },
+      "metadata": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r1-c2.json",
+        "bytes": 982,
+        "sha256": "d34a74d3839b4cad72e75716e860b89953386e9b616d1e48d08d55a55285a42e"
+      },
+      "machine": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r1-c2.machine.json",
+        "bytes": 34714,
+        "sha256": "2cc87d48b1d534375189101aefbf4c65812b91630be5329b2a9ef0885e60f74f"
+      }
+    },
+    "r1-c3": {
+      "id": "r1-c3",
+      "core": [
+        1600,
+        0,
+        2400,
+        1000
+      ],
+      "region": [
+        1536,
+        0,
+        2464,
+        1064
+      ],
+      "dimensions": [
+        928,
+        1064
+      ],
+      "channels": 3,
+      "dtype": "uint16",
+      "sourceBlendSha256": "cb7849e4203d309f8289730651b1be2e8ee2c038deeca587c6d726047c8da61b",
+      "png": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r1-c3.png",
+        "bytes": 4968172,
+        "sha256": "8f5a9a609ef83c76a1e7a33cfa2dd577c2c0bda94e56ebe8c485e2e74d71563d"
+      },
+      "metadata": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r1-c3.json",
+        "bytes": 983,
+        "sha256": "f390551291a104d11b21d84fb8815a1e95c4956d2d66cbbf361b400e1eae9be3"
+      },
+      "machine": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r1-c3.machine.json",
+        "bytes": 56456,
+        "sha256": "22aced9b347bbbc2e632533ffbfe2809aff3d52f0b85cf0b7ae167261c5ac108"
+      }
+    },
+    "r1-c4": {
+      "id": "r1-c4",
+      "core": [
+        2400,
+        0,
+        3200,
+        1000
+      ],
+      "region": [
+        2336,
+        0,
+        3200,
+        1064
+      ],
+      "dimensions": [
+        864,
+        1064
+      ],
+      "channels": 3,
+      "dtype": "uint16",
+      "sourceBlendSha256": "cb7849e4203d309f8289730651b1be2e8ee2c038deeca587c6d726047c8da61b",
+      "png": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r1-c4.png",
+        "bytes": 4567721,
+        "sha256": "3a0a242f0ea8a9f049fdc9933abb6445ad79777635eaa9f1e7df768e64d92fd7"
+      },
+      "metadata": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r1-c4.json",
+        "bytes": 983,
+        "sha256": "c7e9dcb98797baf71bee54b6eeb7965cae8c0b119bd5c8ee7490d3a63a771e9e"
+      },
+      "machine": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r1-c4.machine.json",
+        "bytes": 41561,
+        "sha256": "cf1d7b64c77af9b3decbb4bc897116ee1972158d771985d0e9e5f128528d86b7"
+      }
+    },
+    "r2-c1": {
+      "id": "r2-c1",
+      "core": [
+        0,
+        1000,
+        800,
+        2000
+      ],
+      "region": [
+        0,
+        936,
+        864,
+        2000
+      ],
+      "dimensions": [
+        864,
+        1064
+      ],
+      "channels": 3,
+      "dtype": "uint16",
+      "sourceBlendSha256": "cb7849e4203d309f8289730651b1be2e8ee2c038deeca587c6d726047c8da61b",
+      "png": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r2-c1.png",
+        "bytes": 3716086,
+        "sha256": "caa8dcd42dddb4f035f3fd05a7d2be05148a2b095d4ad0c7407b389c70412a85"
+      },
+      "metadata": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r2-c1.json",
+        "bytes": 981,
+        "sha256": "2d41762cf9813b2bc4dd0bbe957c9a1b339083baf2a0e79c288958f0bf7f5413"
+      },
+      "machine": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r2-c1.machine.json",
+        "bytes": 32240,
+        "sha256": "34fb6a14a2e1419c34d502c5adbd52589ac69d7fc54fa25d44777f3130bccbb0"
+      }
+    },
+    "r2-c2": {
+      "id": "r2-c2",
+      "core": [
+        800,
+        1000,
+        1600,
+        2000
+      ],
+      "region": [
+        736,
+        936,
+        1664,
+        2000
+      ],
+      "dimensions": [
+        928,
+        1064
+      ],
+      "channels": 3,
+      "dtype": "uint16",
+      "sourceBlendSha256": "cb7849e4203d309f8289730651b1be2e8ee2c038deeca587c6d726047c8da61b",
+      "png": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r2-c2.png",
+        "bytes": 4169841,
+        "sha256": "bc6129e0441fd9a83fe103795ea5201fe8eabbc430bb66f71371c41be9deae3f"
+      },
+      "metadata": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r2-c2.json",
+        "bytes": 984,
+        "sha256": "cf563b955902a2e3d1ed31874d6146342684681aad776149d57a9b93f229843f"
+      },
+      "machine": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r2-c2.machine.json",
+        "bytes": 35531,
+        "sha256": "965fdd708ccd8c874b9415a1d6e40ca5546c6bb1519f2bfe81db154b2b996eb1"
+      }
+    },
+    "r2-c3": {
+      "id": "r2-c3",
+      "core": [
+        1600,
+        1000,
+        2400,
+        2000
+      ],
+      "region": [
+        1536,
+        936,
+        2464,
+        2000
+      ],
+      "dimensions": [
+        928,
+        1064
+      ],
+      "channels": 3,
+      "dtype": "uint16",
+      "sourceBlendSha256": "cb7849e4203d309f8289730651b1be2e8ee2c038deeca587c6d726047c8da61b",
+      "png": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r2-c3.png",
+        "bytes": 4176428,
+        "sha256": "2782d1bcf1bc573975f88fbfc4ce8e9812a5fbb01e4c26385874c8df40cab2fa"
+      },
+      "metadata": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r2-c3.json",
+        "bytes": 985,
+        "sha256": "99afb86fc2de753cff81f8f1752cd04aa3e89147d20bee7c11fed74da434427a"
+      },
+      "machine": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r2-c3.machine.json",
+        "bytes": 38823,
+        "sha256": "086c78039f025c0a4f17d7434b611cdeed25e8a75c503b9d200fa63c1da5d658"
+      }
+    },
+    "r2-c4": {
+      "id": "r2-c4",
+      "core": [
+        2400,
+        1000,
+        3200,
+        2000
+      ],
+      "region": [
+        2336,
+        936,
+        3200,
+        2000
+      ],
+      "dimensions": [
+        864,
+        1064
+      ],
+      "channels": 3,
+      "dtype": "uint16",
+      "sourceBlendSha256": "cb7849e4203d309f8289730651b1be2e8ee2c038deeca587c6d726047c8da61b",
+      "png": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r2-c4.png",
+        "bytes": 3853073,
+        "sha256": "6bc44f571f3e11076a6d70ccd28a41e73631e9a8a08f7a935d35d7864b308e05"
+      },
+      "metadata": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r2-c4.json",
+        "bytes": 985,
+        "sha256": "57e87d5b652b16a560b7e135f86334f6d866656ccacc00aa9245d586879ab40a"
+      },
+      "machine": {
+        "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/regions/456662b0d7a566f1-cb7849e4203d309f/r2-c4.machine.json",
+        "bytes": 37724,
+        "sha256": "c2afb8c2b767e0f5e9968d7ad42b3410acb3f96395388eefdf1330c0ad1faa21"
+      }
+    }
+  },
+  "status": "complete",
+  "updatedAt": "2026-10-05T09:33:16.091659+00:00",
+  "construction": {
+    "blend": {
+      "path": ".workspace/architecture-worlds/aurel-wide-final.blend",
+      "bytes": 48664635,
+      "sha256": "cb7849e4203d309f8289730651b1be2e8ee2c038deeca587c6d726047c8da61b"
+    },
+    "metadata": {
+      "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/construction-history/456662b0d7a566f1-1f7ed852/construction.json",
+      "bytes": 1998,
+      "sha256": "da9011e303d252d29a41414acb2edd378e3c7823fc65d40871672546f163624a"
+    },
+    "machine": {
+      "path": ".workspace/architecture-worlds/checkpoints/aurel-wide/construction-history/456662b0d7a566f1-1f7ed852/construction.machine.json",
+      "bytes": 1800,
+      "sha256": "9a7feb552dd8537053bb2508996cf8d462740fc5cf76a99013c5401153beb549"
+    }
+  },
+  "full": {
+    "png": {
+      "path": ".workspace/architecture-worlds/aurel-wide-final.png",
+      "bytes": 28844029,
+      "sha256": "074f11dc6c2dd9d3b54321bfdd1b06e31aa946f7fbbe7f95d9e07c4561e3e67a",
+      "colorChunks": [
+        {
+          "type": "sRGB",
+          "sha256": "711c4ff49da83dd7f14b0800b6ad4f7df58e6d66545525e83e14ba3992da0d69"
+        },
+        {
+          "type": "gAMA",
+          "sha256": "38ad77a09221cff71e5ca575333e576de71e0007f4d370083d8005dce15017d5"
+        },
+        {
+          "type": "cHRM",
+          "sha256": "68765597c7f1e0610c20028a6e9a7080d200ae493389fb5147ad186697ea4db5"
+        }
+      ]
+    },
+    "blend": {
+      "path": ".workspace/architecture-worlds/aurel-wide-final.blend",
+      "bytes": 48664635,
+      "sha256": "cb7849e4203d309f8289730651b1be2e8ee2c038deeca587c6d726047c8da61b"
+    },
+    "metadata": {
+      "path": ".workspace/architecture-worlds/aurel-wide-final.json",
+      "bytes": 12988,
+      "sha256": "dd59cdebea84493e6679428a00a3dd516cea48f79d5deb4ba97991f934228200"
+    },
+    "machine": {
+      "path": ".workspace/architecture-worlds/aurel-wide-final.machine.json",
+      "bytes": 315562,
+      "sha256": "0f52308ca222a0a1cc23db97a21342537d38fca178913e7a36082d6e474b3089"
+    }
+  }
+}

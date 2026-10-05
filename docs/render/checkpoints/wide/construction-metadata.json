@@ -1,0 +1,75 @@
+{
+  "scene": "aurel",
+  "view": "wide",
+  "quality": "final",
+  "compute": "CUDA",
+  "devices": [
+    {
+      "name": "NVIDIA GeForce RTX 2060",
+      "type": "CUDA",
+      "id": "CUDA_NVIDIA GeForce RTX 2060_0000:01:00"
+    }
+  ],
+  "cpuEnabled": false,
+  "denoiser": "OPTIX",
+  "blender": "5.2.2 LTS",
+  "resolution": [
+    3200,
+    2000
+  ],
+  "samples": 768,
+  "adaptiveThreshold": 0.004999999888241291,
+  "minimumSamples": 96,
+  "bounces": 14,
+  "objects": 2190,
+  "evaluatedTriangles": 1121544,
+  "geometry": "Original Python authored architectural world",
+  "materials": "Original procedural and Poly Haven CC0 photo PBR; see textures/manifest.json",
+  "texturesPacked": true,
+  "rendered": false,
+  "cloth": {
+    "sha256": "a7107f2e10175b988b800e2a5eda7cea65ec813325f16ca1efd5e80aa58465a0",
+    "bake": {
+      "method": "Blender Cloth gravity and self-collision; no analytic final fold surface",
+      "blender": "5.2.2 LTS",
+      "frame": 130,
+      "frames": 130,
+      "cacheBaked": true,
+      "seconds": 97.21668457984924,
+      "units": "metres",
+      "space": "world",
+      "restPose": {
+        "centre": [
+          1.05,
+          0.35,
+          1.36
+        ],
+        "width": 1.42,
+        "length": 1.58,
+        "angle": -0.18,
+        "seed": 421
+      },
+      "physics": {
+        "quality": 10,
+        "collisionQuality": 8,
+        "mass": 0.22,
+        "tension": 18,
+        "compression": 18,
+        "shear": 8,
+        "bending": 0.12,
+        "distance": 0.004,
+        "selfDistance": 0.004,
+        "gravity": [
+          0.0,
+          0.0,
+          -9.8100004196167
+        ],
+        "unpinned": true
+      },
+      "blendFile": "C:\\Users\\William King\\Documents\\Money Making Project\\.workspace\\architecture-worlds\\cloth\\aurel.blend",
+      "snapshotObject": "SETTLED SNAPSHOT / unhide to inspect without cache"
+    }
+  },
+  "tileSize": 512,
+  "elapsedSeconds": 5.036
+}

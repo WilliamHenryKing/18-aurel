@@ -1,0 +1,42 @@
+{
+  "scene": "aurel",
+  "codec": "WebP",
+  "records": [
+    {
+      "file": "public/images/aurel-world.webp",
+      "width": 3200,
+      "height": 2000,
+      "bytes": 460308,
+      "sha256": "2d216a5d12b768a6f0959c55ec38fdb35b1500099337488ea0f646bc9f10f731",
+      "quality": 90,
+      "source": "aurel-wide-final.png"
+    },
+    {
+      "file": "public/images/aurel-world-mobile.webp",
+      "width": 1000,
+      "height": 625,
+      "bytes": 58610,
+      "sha256": "81141feb45669d254e48d5b5761e9ea8559f75f002adb6e06f8537fe37fb1793",
+      "quality": 86,
+      "source": "aurel-wide-final.png"
+    },
+    {
+      "file": "public/images/aurel-timber-study.webp",
+      "width": 3200,
+      "height": 2000,
+      "bytes": 219232,
+      "sha256": "9f12710a3c4830688c902c010babc517eae3a20ec86c02e4caad76c2dcbc2db3",
+      "quality": 90,
+      "source": "aurel-detail-final.png"
+    },
+    {
+      "file": "public/images/aurel-timber-study-mobile.webp",
+      "width": 1000,
+      "height": 625,
+      "bytes": 36476,
+      "sha256": "aefe431124d554ccbf83d2862462cddabc0cba2325f90faeb886df61dc5cf37c",
+      "quality": 86,
+      "source": "aurel-detail-final.png"
+    }
+  ]
+}

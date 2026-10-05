@@ -1,0 +1,284 @@
+{
+  "base": "https://18-aurel.williamking.workers.dev",
+  "checkedAt": "2026-10-03T15:13:00.653Z",
+  "files": [
+    {
+      "path": "/404.html",
+      "status": 200,
+      "matched": true,
+      "bytes": 344
+    },
+    {
+      "path": "/assets/index-B7_d4WSP.css",
+      "status": 200,
+      "matched": true,
+      "bytes": 41158
+    },
+    {
+      "path": "/assets/index-oc1M73_x.js",
+      "status": 200,
+      "matched": true,
+      "bytes": 359678
+    },
+    {
+      "path": "/assets/LightStudy-DR9ATTkL.js",
+      "status": 200,
+      "matched": true,
+      "bytes": 549112
+    },
+    {
+      "path": "/favicon.svg",
+      "status": 200,
+      "matched": true,
+      "bytes": 197
+    },
+    {
+      "path": "/fonts/cormorant-garamond-0.woff2",
+      "status": 200,
+      "matched": true,
+      "bytes": 63640
+    },
+    {
+      "path": "/fonts/cormorant-garamond-1.woff2",
+      "status": 200,
+      "matched": true,
+      "bytes": 64332
+    },
+    {
+      "path": "/fonts/cormorant-italic.woff2",
+      "status": 200,
+      "matched": true,
+      "bytes": 65232
+    },
+    {
+      "path": "/fonts/manrope-latin.woff2",
+      "status": 200,
+      "matched": true,
+      "bytes": 24836
+    },
+    {
+      "path": "/fonts/OFL-Cormorant-Garamond.txt",
+      "status": 200,
+      "matched": true,
+      "bytes": 4387
+    },
+    {
+      "path": "/fonts/OFL-Manrope.txt",
+      "status": 200,
+      "matched": true,
+      "bytes": 4387
+    },
+    {
+      "path": "/images/aurel-hero-mobile.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 52432
+    },
+    {
+      "path": "/images/aurel-hero.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 223802
+    },
+    {
+      "path": "/images/joinery-detail-mobile.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 51376
+    },
+    {
+      "path": "/images/joinery-detail-small.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 51376
+    },
+    {
+      "path": "/images/joinery-detail.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 191022
+    },
+    {
+      "path": "/images/LICENSE-Unsplash.txt",
+      "status": 200,
+      "matched": true,
+      "bytes": 1079
+    },
+    {
+      "path": "/images/sanctuary-small.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 228822
+    },
+    {
+      "path": "/images/sanctuary.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 838644
+    },
+    {
+      "path": "/images/stair-hall-mobile.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 49760
+    },
+    {
+      "path": "/images/stair-hall-small.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 49760
+    },
+    {
+      "path": "/images/stair-hall.webp",
+      "status": 200,
+      "matched": true,
+      "bytes": 251318
+    },
+    {
+      "path": "/index.html",
+      "status": 200,
+      "matched": true,
+      "bytes": 820
+    },
+    {
+      "path": "/release.json",
+      "status": 200,
+      "matched": true,
+      "bytes": 131
+    }
+  ],
+  "errors": [],
+  "notFoundStatus": 404,
+  "release": {
+    "project": "18-aurel",
+    "sourceCommit": "53ca7560e4b9d94c66efe3f3cf6b055e8ddf06b5",
+    "builtAt": "2026-10-03T15:11:02.493Z"
+  },
+  "desktop": {
+    "title": "Space, deeply felt. — AUREL",
+    "overflow": false,
+    "resources": [
+      {
+        "name": "/fonts/cormorant-garamond-0.woff2",
+        "encoded": 63640,
+        "transfer": 63940
+      },
+      {
+        "name": "/assets/index-oc1M73_x.js",
+        "encoded": 124649,
+        "transfer": 124949
+      },
+      {
+        "name": "/assets/index-B7_d4WSP.css",
+        "encoded": 10619,
+        "transfer": 10919
+      },
+      {
+        "name": "/fonts/manrope-latin.woff2",
+        "encoded": 24836,
+        "transfer": 25136
+      },
+      {
+        "name": "/fonts/cormorant-italic.woff2",
+        "encoded": 65232,
+        "transfer": 65532
+      },
+      {
+        "name": "/assets/LightStudy-DR9ATTkL.js",
+        "encoded": 142405,
+        "transfer": 142705
+      },
+      {
+        "name": "/images/aurel-hero.webp",
+        "encoded": 223802,
+        "transfer": 224102
+      },
+      {
+        "name": "/images/stair-hall.webp",
+        "encoded": 251318,
+        "transfer": 251618
+      },
+      {
+        "name": "/favicon.svg",
+        "encoded": 163,
+        "transfer": 463
+      }
+    ],
+    "paint": [
+      {
+        "name": "first-paint",
+        "startTime": 432
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 596
+      }
+    ]
+  },
+  "phone": {
+    "title": "Space, deeply felt. — AUREL",
+    "overflow": false,
+    "resources": [
+      {
+        "name": "/fonts/cormorant-garamond-0.woff2",
+        "encoded": 63640,
+        "transfer": 63940
+      },
+      {
+        "name": "/assets/index-oc1M73_x.js",
+        "encoded": 124649,
+        "transfer": 124949
+      },
+      {
+        "name": "/assets/index-B7_d4WSP.css",
+        "encoded": 10619,
+        "transfer": 10919
+      },
+      {
+        "name": "/fonts/manrope-latin.woff2",
+        "encoded": 24836,
+        "transfer": 25136
+      },
+      {
+        "name": "/fonts/cormorant-italic.woff2",
+        "encoded": 65232,
+        "transfer": 65532
+      },
+      {
+        "name": "/assets/LightStudy-DR9ATTkL.js",
+        "encoded": 142432,
+        "transfer": 142732
+      },
+      {
+        "name": "/images/aurel-hero.webp",
+        "encoded": 223802,
+        "transfer": 224102
+      },
+      {
+        "name": "/images/aurel-hero-mobile.webp",
+        "encoded": 52432,
+        "transfer": 52732
+      },
+      {
+        "name": "/images/stair-hall-small.webp",
+        "encoded": 49760,
+        "transfer": 50060
+      },
+      {
+        "name": "/favicon.svg",
+        "encoded": 163,
+        "transfer": 463
+      }
+    ],
+    "paint": [
+      {
+        "name": "first-paint",
+        "startTime": 432
+      },
+      {
+        "name": "first-contentful-paint",
+        "startTime": 584
+      }
+    ]
+  }
+}

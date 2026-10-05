@@ -1,0 +1,41 @@
+{
+  "scene": "aurel",
+  "view": "detail",
+  "quality": "final",
+  "rendered": true,
+  "sourceBlend": "C:\\Users\\William King\\Documents\\Money Making Project\\.workspace\\architecture-worlds\\aurel-detail-final.blend",
+  "sourceBlendSha256": "d8e2470aec813e28e59e307765a31dc602c345510508286a8040142ad302103f",
+  "region": [
+    0,
+    0,
+    864,
+    1064
+  ],
+  "fullResolution": [
+    3200,
+    2000
+  ],
+  "resolution": [
+    864,
+    1064
+  ],
+  "compute": "CUDA",
+  "devices": [
+    {
+      "name": "NVIDIA GeForce RTX 2060",
+      "type": "CUDA",
+      "id": "CUDA_NVIDIA GeForce RTX 2060_0000:01:00"
+    }
+  ],
+  "cpuEnabled": false,
+  "denoiser": "OPTIX",
+  "samples": 1024,
+  "adaptiveThreshold": 0.004999999888241291,
+  "minimumSamples": 96,
+  "bounces": 14,
+  "blender": "5.2.2 LTS",
+  "tileSize": 512,
+  "bytes": 3532479,
+  "sha256": "93ca0e30c6182c80f60b97bc7544975de07a2507b83ed6656c5a3c8e3580d74b",
+  "elapsedSeconds": 307.293
+}
