@@ -655,7 +655,9 @@ export default function App() {
           sequence
             .fromTo(".material-aperture", { scaleX: 1 }, { scaleX: 0, duration: 0.85 })
             .from(".world-image img", { scale: 1.045, duration: 1.2 }, 0)
-            .from(".world-gallery figcaption", { opacity: 0.35, duration: 0.45 }, 0.5);
+            // A rise, not a fade: the caption and its view buttons stay focusable
+            // and at full contrast before the visitor reaches the gallery.
+            .from(".world-gallery figcaption", { y: 12, duration: 0.7 }, 0.45);
         }
       }
     },
